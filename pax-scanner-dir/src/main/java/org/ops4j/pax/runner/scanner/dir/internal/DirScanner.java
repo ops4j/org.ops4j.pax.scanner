@@ -30,15 +30,15 @@ import java.util.zip.ZipFile;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.ops4j.lang.NullArgumentException;
-import org.ops4j.pax.runner.provision.MalformedSpecificationException;
-import org.ops4j.pax.runner.provision.ProvisionSpec;
-import org.ops4j.pax.runner.provision.ScannedBundle;
-import org.ops4j.pax.runner.provision.Scanner;
-import org.ops4j.pax.runner.provision.ScannerException;
+import org.ops4j.pax.scanner.ScannedBundle;
+import org.ops4j.pax.scanner.Scanner;
+import org.ops4j.pax.scanner.ScannerException;
 import org.ops4j.pax.runner.provision.scanner.ScannedFileBundle;
 import org.ops4j.pax.runner.provision.scanner.ScannerConfiguration;
 import org.ops4j.pax.runner.provision.scanner.ScannerConfigurationImpl;
 import org.ops4j.pax.runner.scanner.dir.ServiceConstants;
+import org.ops4j.pax.scanner.MalformedSpecificationException;
+import org.ops4j.pax.scanner.ProvisionSpec;
 import org.ops4j.util.property.PropertyResolver;
 
 /**

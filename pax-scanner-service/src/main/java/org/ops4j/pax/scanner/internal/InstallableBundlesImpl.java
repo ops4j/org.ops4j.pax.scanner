@@ -15,14 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.provision.internal;
+package org.ops4j.pax.scanner.internal;
+
+import org.ops4j.lang.NullArgumentException;
+import org.ops4j.pax.scanner.InstallableBundle;
+import org.ops4j.pax.scanner.InstallableBundles;
+import org.osgi.framework.BundleException;
 
 import java.util.Iterator;
 import java.util.List;
-import org.osgi.framework.BundleException;
-import org.ops4j.lang.NullArgumentException;
-import org.ops4j.pax.runner.provision.InstallableBundle;
-import org.ops4j.pax.runner.provision.InstallableBundles;
 
 public class InstallableBundlesImpl
     implements InstallableBundles
@@ -55,7 +56,7 @@ public class InstallableBundlesImpl
     }
 
     /**
-     * @see org.ops4j.pax.runner.provision.InstallableBundles#install()
+     * @see org.ops4j.pax.scanner.InstallableBundles#install()
      */
     public InstallableBundles install()
         throws BundleException

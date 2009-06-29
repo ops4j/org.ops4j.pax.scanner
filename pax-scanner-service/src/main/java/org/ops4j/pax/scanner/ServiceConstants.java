@@ -1,4 +1,4 @@
-package org.ops4j.pax.runner.provision;
+package org.ops4j.pax.scanner;
 
 /**
  * An enumeration of constants related to provision service.
@@ -24,7 +24,7 @@ public interface ServiceConstants
     /**
      * Start option.
      */
-    static String OPTION_START = "start";    
+    static String OPTION_START = "start";
     /**
      * No start option.
      */
@@ -36,7 +36,7 @@ public interface ServiceConstants
     /**
      * No update option.
      */
-    static String OPTION_NO_UPDATE = "noupdate";    
+    static String OPTION_NO_UPDATE = "noupdate";
 
     /**
      * Start level configuration property name (used by scanners).
@@ -55,6 +55,6 @@ public interface ServiceConstants
     /**
      * Certificate check configuration property name.
      */
-    static final String PROPERTY_CERTIFICATE_CHECK = ".certificateCheck";    
+    static final String PROPERTY_CERTIFICATE_CHECK = ".certificateCheck";
 
 }

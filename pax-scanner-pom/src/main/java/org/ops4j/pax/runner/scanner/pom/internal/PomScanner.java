@@ -30,15 +30,14 @@ import org.xml.sax.SAXException;
 import org.ops4j.lang.NullArgumentException;
 import org.ops4j.net.URLUtils;
 import org.ops4j.pax.runner.commons.properties.SystemPropertyUtils;
-import org.ops4j.pax.runner.provision.MalformedSpecificationException;
-import org.ops4j.pax.runner.provision.ProvisionSpec;
-import org.ops4j.pax.runner.provision.ScannedBundle;
-import org.ops4j.pax.runner.provision.Scanner;
-import org.ops4j.pax.runner.provision.ScannerException;
+import org.ops4j.pax.scanner.ScannerException;
 import org.ops4j.pax.runner.provision.scanner.ScannedFileBundle;
 import org.ops4j.pax.runner.provision.scanner.ScannerConfiguration;
 import org.ops4j.pax.runner.provision.scanner.ScannerConfigurationImpl;
 import org.ops4j.pax.runner.scanner.pom.ServiceConstants;
+import org.ops4j.pax.scanner.MalformedSpecificationException;
+import org.ops4j.pax.scanner.ScannedBundle;
+import org.ops4j.pax.scanner.*;
 import org.ops4j.util.property.PropertyResolver;
 import org.ops4j.util.xml.XmlUtils;
 
@@ -166,7 +165,7 @@ public class PomScanner
      *
      * @return a maven url
      *
-     * @throws org.ops4j.pax.runner.provision.ScannerException
+     * @throws org.ops4j.pax.scanner.ScannerException
      *          if the element does not contain an artifact or group id
      */
     private String composeURL( Element parentElement, String typeElementName )

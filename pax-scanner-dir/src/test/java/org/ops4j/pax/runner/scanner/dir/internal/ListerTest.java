@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 import org.junit.Assert;
 import org.junit.Test;
-import org.ops4j.pax.runner.provision.ProvisionSpec;
+import org.ops4j.pax.scanner.ProvisionSpec;
 
 public abstract class ListerTest
 {

@@ -25,12 +25,12 @@ import static org.easymock.EasyMock.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.ops4j.io.FileUtils;
-import org.ops4j.pax.runner.provision.MalformedSpecificationException;
-import org.ops4j.pax.runner.provision.ProvisionSpec;
-import org.ops4j.pax.runner.provision.ScannedBundle;
-import org.ops4j.pax.runner.provision.ScannerException;
+import org.ops4j.pax.scanner.ScannerException;
 import org.ops4j.pax.runner.provision.scanner.ScannedFileBundle;
 import org.ops4j.pax.runner.provision.scanner.ScannerConfiguration;
+import org.ops4j.pax.scanner.MalformedSpecificationException;
+import org.ops4j.pax.scanner.ScannedBundle;
+import org.ops4j.pax.scanner.*;
 import org.ops4j.util.property.PropertyResolver;
 
 public class PomScannerTest

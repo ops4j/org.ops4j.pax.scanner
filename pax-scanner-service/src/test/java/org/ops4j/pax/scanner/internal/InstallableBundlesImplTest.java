@@ -15,16 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.provision.internal;
+package org.ops4j.pax.scanner.internal;
+
+import static org.easymock.EasyMock.*;
+import static org.junit.Assert.*;
+import org.junit.Test;
+import org.ops4j.pax.scanner.InstallableBundle;
+import org.osgi.framework.BundleException;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import static org.easymock.EasyMock.*;
-import static org.junit.Assert.*;
-import org.junit.Test;
-import org.osgi.framework.BundleException;
-import org.ops4j.pax.runner.provision.InstallableBundle;
 
 public class InstallableBundlesImplTest
 {

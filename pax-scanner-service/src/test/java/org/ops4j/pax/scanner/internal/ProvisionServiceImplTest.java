@@ -15,22 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.provision.internal;
+package org.ops4j.pax.scanner.internal;
+
+import static org.easymock.EasyMock.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import org.junit.Test;
+import org.ops4j.pax.scanner.*;
+import org.osgi.framework.BundleContext;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import static org.easymock.EasyMock.*;
-import static org.junit.Assert.*;
-import org.junit.Test;
-import org.osgi.framework.BundleContext;
-import org.ops4j.pax.runner.provision.InstallableBundles;
-import org.ops4j.pax.runner.provision.MalformedSpecificationException;
-import org.ops4j.pax.runner.provision.ProvisionSpec;
-import org.ops4j.pax.runner.provision.ScannedBundle;
-import org.ops4j.pax.runner.provision.Scanner;
-import org.ops4j.pax.runner.provision.ScannerException;
-import org.ops4j.pax.runner.provision.UnsupportedSchemaException;
 
 public class ProvisionServiceImplTest
 {

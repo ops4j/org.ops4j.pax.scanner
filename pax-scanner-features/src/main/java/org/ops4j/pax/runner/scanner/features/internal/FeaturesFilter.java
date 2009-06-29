@@ -21,8 +21,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import org.apache.servicemix.kernel.gshell.features.internal.FeatureImpl;
 import org.ops4j.lang.NullArgumentException;
-import org.ops4j.pax.runner.provision.ProvisionSpec;
-import org.ops4j.pax.runner.provision.ScannerException;
+import org.ops4j.pax.scanner.ProvisionSpec;
+import org.ops4j.pax.scanner.ScannerException;
 import org.ops4j.pax.runner.scanner.features.ServiceConstants;
 
 /**

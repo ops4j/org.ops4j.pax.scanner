@@ -18,7 +18,7 @@
 package org.ops4j.pax.runner.provision.scanner;
 
 import org.ops4j.lang.NullArgumentException;
-import org.ops4j.pax.runner.provision.ServiceConstants;
+import org.ops4j.pax.scanner.ServiceConstants;
 import org.ops4j.util.property.PropertyResolver;
 import org.ops4j.util.property.PropertyStore;
 

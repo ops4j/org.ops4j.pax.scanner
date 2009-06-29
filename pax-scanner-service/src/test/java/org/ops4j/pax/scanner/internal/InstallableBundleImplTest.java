@@ -15,18 +15,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.provision.internal;
+package org.ops4j.pax.scanner.internal;
 
-import java.net.MalformedURLException;
 import static org.easymock.EasyMock.*;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
 import org.junit.Test;
+import org.ops4j.pax.scanner.InstallableBundle;
+import org.ops4j.pax.scanner.ScannedBundle;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleException;
 import org.osgi.service.startlevel.StartLevel;
-import org.ops4j.pax.runner.provision.InstallableBundle;
-import org.ops4j.pax.runner.provision.ScannedBundle;
+
+import java.net.MalformedURLException;
 
 public class InstallableBundleImplTest
 {

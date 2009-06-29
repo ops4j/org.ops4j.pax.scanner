@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 import org.junit.Before;
 import org.junit.Test;
 import org.ops4j.io.FileUtils;
-import org.ops4j.pax.runner.provision.ProvisionSpec;
+import org.ops4j.pax.scanner.ProvisionSpec;
 
 public class DirectoryListerTest
     extends ListerTest

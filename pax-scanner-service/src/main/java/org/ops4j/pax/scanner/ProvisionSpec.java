@@ -15,12 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.provision;
+package org.ops4j.pax.scanner;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.regex.Pattern;
-import static org.ops4j.pax.runner.provision.ServiceConstants.*;
 
 /**
  * Provisioning specification.
@@ -83,21 +82,25 @@ public class ProvisionSpec
         {
             throw new MalformedSpecificationException( "Specification cannot be null or empty" );
         }
-        if( !spec.contains( SEPARATOR_SCHEME ) )
+        if( !spec.contains( ServiceConstants.SEPARATOR_SCHEME ) )
         {
             throw new UnsupportedSchemaException( "Provisioning scheme is not specified" );
         }
-        m_scheme = spec.substring( 0, spec.indexOf( SEPARATOR_SCHEME ) );
-        final String fullPath = spec.substring( spec.indexOf( SEPARATOR_SCHEME ) + 1 );
+        m_scheme = spec.substring( 0, spec.indexOf( ServiceConstants.SEPARATOR_SCHEME ) );
+        final String fullPath = spec.substring( spec.indexOf( ServiceConstants.SEPARATOR_SCHEME ) + 1 );
         if( fullPath == null || fullPath.trim().length() == 0 )
         {
             throw new MalformedSpecificationException( "Path cannot be null or empty." );
         }
-        if( fullPath.startsWith( SEPARATOR_OPTION ) || fullPath.endsWith( SEPARATOR_OPTION ) )
+        if( fullPath.startsWith( ServiceConstants.SEPARATOR_OPTION ) || fullPath.endsWith(
+            ServiceConstants.SEPARATOR_OPTION
+        ) )
         {
-            throw new MalformedSpecificationException( "Path cannot start or end with " + SEPARATOR_OPTION );
+            throw new MalformedSpecificationException(
+                "Path cannot start or end with " + ServiceConstants.SEPARATOR_OPTION
+            );
         }
-        final String[] optionsSegments = fullPath.split( SEPARATOR_OPTION );
+        final String[] optionsSegments = fullPath.split( ServiceConstants.SEPARATOR_OPTION );
         if( optionsSegments.length > 1 )
         {
             for( int i = 1; i < optionsSegments.length; i++ )
@@ -250,28 +253,28 @@ public class ProvisionSpec
      */
     private void parseSegment( final String segment )
     {
-        if( segment.equalsIgnoreCase( OPTION_START ) )
+        if( segment.equalsIgnoreCase( ServiceConstants.OPTION_START ) )
         {
             if( m_shouldStart == null )
             {
                 m_shouldStart = true;
             }
         }
-        else if( segment.equalsIgnoreCase( OPTION_NO_START ) )
+        else if( segment.equalsIgnoreCase( ServiceConstants.OPTION_NO_START ) )
         {
             if( m_shouldStart == null )
             {
                 m_shouldStart = false;
             }
         }
-        else if( segment.equalsIgnoreCase( OPTION_UPDATE ) )
+        else if( segment.equalsIgnoreCase( ServiceConstants.OPTION_UPDATE ) )
         {
             if( m_shouldUpdate == null )
             {
                 m_shouldUpdate = true;
             }
         }
-        else if( segment.equalsIgnoreCase( OPTION_NO_UPDATE ) )
+        else if( segment.equalsIgnoreCase( ServiceConstants.OPTION_NO_UPDATE ) )
         {
             if( m_shouldUpdate == null )
             {
@@ -400,37 +403,37 @@ public class ProvisionSpec
     {
         final StringBuilder form = new StringBuilder()
             .append( getScheme() )
-            .append( SEPARATOR_SCHEME )
+            .append( ServiceConstants.SEPARATOR_SCHEME )
             .append( getPath() );
 
         if( m_filter != null )
         {
-            form.append( SEPARATOR_FILTER ).append( m_filter );
+            form.append( ServiceConstants.SEPARATOR_FILTER ).append( m_filter );
         }
         if( m_startLevel != null )
         {
-            form.append( SEPARATOR_OPTION ).append( m_startLevel );
+            form.append( ServiceConstants.SEPARATOR_OPTION ).append( m_startLevel );
         }
         if( m_shouldStart != null )
         {
             if( m_shouldStart )
             {
-                form.append( SEPARATOR_OPTION ).append( OPTION_START );
+                form.append( ServiceConstants.SEPARATOR_OPTION ).append( ServiceConstants.OPTION_START );
             }
             else
             {
-                form.append( SEPARATOR_OPTION ).append( OPTION_NO_START );
+                form.append( ServiceConstants.SEPARATOR_OPTION ).append( ServiceConstants.OPTION_NO_START );
             }
         }
         if( m_shouldUpdate != null )
         {
             if( m_shouldUpdate )
             {
-                form.append( SEPARATOR_OPTION ).append( OPTION_UPDATE );
+                form.append( ServiceConstants.SEPARATOR_OPTION ).append( ServiceConstants.OPTION_UPDATE );
             }
             else
             {
-                form.append( SEPARATOR_OPTION ).append( OPTION_NO_UPDATE );
+                form.append( ServiceConstants.SEPARATOR_OPTION ).append( ServiceConstants.OPTION_NO_UPDATE );
             }
         }
 

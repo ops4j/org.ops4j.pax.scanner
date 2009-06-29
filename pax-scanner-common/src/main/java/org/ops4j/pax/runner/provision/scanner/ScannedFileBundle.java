@@ -18,9 +18,9 @@
 package org.ops4j.pax.runner.provision.scanner;
 
 import java.net.MalformedURLException;
-import org.ops4j.pax.runner.provision.MalformedSpecificationException;
-import org.ops4j.pax.runner.provision.ScannedBundleBean;
-import org.ops4j.pax.runner.provision.ServiceConstants;
+import org.ops4j.pax.scanner.MalformedSpecificationException;
+import org.ops4j.pax.scanner.ScannedBundleBean;
+import org.ops4j.pax.scanner.ServiceConstants;
 
 /**
  * Represents an entry in the scanned file..

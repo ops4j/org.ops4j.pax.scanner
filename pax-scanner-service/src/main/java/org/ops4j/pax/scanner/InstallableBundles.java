@@ -15,36 +15,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.provision;
+package org.ops4j.pax.scanner;
+
+import org.osgi.framework.BundleException;
 
 /**
- * Thrown to indicate that an exception occured durring scanning.
+ * A set of bundles that can be iterated, installed or started as a group.
  *
  * @author Alin Dreghiciu
  * @since August 17, 2007
  */
-public class ScannerException
-    extends Exception
+public interface InstallableBundles
+    extends Iterable<InstallableBundle>
 {
 
     /**
-     * @param message The exception message.
+     * Installs the available bundles.
      *
-     * @see Exception#Exception(String)
+     * @return itself, for fluent api usage
+     *
+     * @throws org.osgi.framework.BundleException
+     *          if an underlying problem occur in the OSGi framework.
      */
-    public ScannerException( String message )
-    {
-        super( message );
-    }
+    InstallableBundles install()
+        throws BundleException;
 
-    /**
-     * @param message The exception message.
-     * @param cause   The originial cause of the exception.
-     *
-     * @see Exception#Exception(String,Throwable)
-     */
-    public ScannerException( String message, Throwable cause )
-    {
-        super( message, cause );
-    }
 }

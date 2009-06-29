@@ -15,15 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.provision.internal;
+package org.ops4j.pax.scanner.internal;
 
+import org.ops4j.lang.NullArgumentException;
+import org.ops4j.pax.scanner.InstallableBundle;
+import org.ops4j.pax.scanner.ScannedBundle;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleException;
 import org.osgi.service.startlevel.StartLevel;
-import org.ops4j.lang.NullArgumentException;
-import org.ops4j.pax.runner.provision.InstallableBundle;
-import org.ops4j.pax.runner.provision.ScannedBundle;
 
 public class InstallableBundleImpl
     implements InstallableBundle
@@ -100,7 +100,7 @@ public class InstallableBundleImpl
     }
 
     /**
-     * @see InstallableBundle#startIfNecessary()
+     * @see org.ops4j.pax.scanner.InstallableBundle#startIfNecessary()
      */
     public InstallableBundle startIfNecessary()
         throws BundleException

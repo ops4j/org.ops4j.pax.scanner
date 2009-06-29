@@ -15,11 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.provision;
+package org.ops4j.pax.scanner;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import org.junit.Test;
 
 import java.net.MalformedURLException;
-import static org.junit.Assert.*;
-import org.junit.Test;
 
 /**
  * {@link ProvisionSpec} unit tests.

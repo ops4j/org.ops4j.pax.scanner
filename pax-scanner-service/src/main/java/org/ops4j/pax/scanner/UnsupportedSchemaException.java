@@ -16,7 +16,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.provision;
+package org.ops4j.pax.scanner;
 
 /**
  * Thrown to indicate that the schema is not supported.

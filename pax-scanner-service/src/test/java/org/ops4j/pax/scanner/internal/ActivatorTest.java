@@ -15,17 +15,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.provision.internal;
+package org.ops4j.pax.scanner.internal;
 
-import java.util.Dictionary;
 import static org.easymock.EasyMock.*;
 import org.junit.Test;
+import org.ops4j.pax.scanner.ProvisionService;
+import org.ops4j.pax.scanner.Scanner;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.Filter;
 import org.osgi.framework.ServiceListener;
 import org.osgi.service.startlevel.StartLevel;
-import org.ops4j.pax.runner.provision.ProvisionService;
-import org.ops4j.pax.runner.provision.Scanner;
+
+import java.util.Dictionary;
 
 public class ActivatorTest
 {

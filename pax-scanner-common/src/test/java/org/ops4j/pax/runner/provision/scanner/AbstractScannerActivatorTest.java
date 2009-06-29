@@ -22,7 +22,7 @@ import static org.easymock.EasyMock.*;
 import org.junit.Test;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.cm.ManagedService;
-import org.ops4j.pax.runner.provision.Scanner;
+import org.ops4j.pax.scanner.Scanner;
 import org.ops4j.util.property.PropertyResolver;
 
 public class AbstractScannerActivatorTest
