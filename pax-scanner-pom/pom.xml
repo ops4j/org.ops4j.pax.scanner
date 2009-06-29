@@ -5,19 +5,19 @@
 
   <parent>
     <groupId>org.ops4j.pax</groupId>
-    <artifactId>runner</artifactId>
-    <version>1.1.2-SNAPSHOT</version>
+    <artifactId>scanner</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <groupId>org.ops4j.pax.runner</groupId>
-  <artifactId>pax-runner-scanner-pom</artifactId>
-  <version>1.1.2-SNAPSHOT</version>
+  <groupId>org.ops4j.pax.scanner</groupId>
+  <artifactId>pax-scanner-pom</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
 
-  <name>OPS4J Pax Runner - Maven POM scanner</name>
+  <name>OPS4J Pax Scanner - Maven POM scanner</name>
   <description>
-    OPS4J Pax Runner - Provision from an maven pom file.
+    OPS4J Pax Scanner - Scan from a maven pom file.
     See details at http://wiki.ops4j.org/confluence/x/GYA6.
   </description>
 
@@ -54,20 +54,15 @@
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>org.ops4j.pax.runner</groupId>
-      <artifactId>pax-runner-scanner-common</artifactId>
-      <version>1.1.2-SNAPSHOT</version>
+      <groupId>org.ops4j.pax.scanner</groupId>
+      <artifactId>pax-scanner-common</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
       <optional>true</optional>
     </dependency>    
     <dependency>
-      <groupId>org.ops4j.pax.runner</groupId>
-      <artifactId>pax-runner-commons</artifactId>
-      <version>1.1.2-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.ops4j.pax.runner</groupId>
-      <artifactId>pax-runner-provision</artifactId>
-      <version>1.1.2-SNAPSHOT</version>
+      <groupId>org.ops4j.pax.scanner</groupId>
+      <artifactId>pax-scanner-service</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
       <type>bundle</type>
       <scope>provided</scope>
     </dependency>
