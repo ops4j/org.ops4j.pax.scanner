@@ -15,7 +15,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.scanner.dir.internal;
+package org.ops4j.pax.scanner.dir.internal;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.ops4j.lang.NullArgumentException;
+import org.ops4j.pax.scanner.*;
+import org.ops4j.pax.scanner.common.ScannedFileBundle;
+import org.ops4j.pax.scanner.common.ScannerConfiguration;
+import org.ops4j.pax.scanner.common.ScannerConfigurationImpl;
+import org.ops4j.pax.scanner.dir.ServiceConstants;
+import org.ops4j.util.property.PropertyResolver;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,19 +37,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 import java.util.zip.ZipFile;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.ops4j.lang.NullArgumentException;
-import org.ops4j.pax.scanner.ScannedBundle;
-import org.ops4j.pax.scanner.Scanner;
-import org.ops4j.pax.scanner.ScannerException;
-import org.ops4j.pax.scanner.common.ScannerConfigurationImpl;
-import org.ops4j.pax.runner.scanner.dir.ServiceConstants;
-import org.ops4j.pax.scanner.MalformedSpecificationException;
-import org.ops4j.pax.scanner.ProvisionSpec;
-import org.ops4j.pax.scanner.common.ScannedFileBundle;
-import org.ops4j.pax.scanner.common.ScannerConfiguration;
-import org.ops4j.util.property.PropertyResolver;
 
 /**
  * A scanner that scans directory content for bundles.

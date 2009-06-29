@@ -1,4 +1,9 @@
-package org.ops4j.pax.runner.scanner.dir.internal;
+package org.ops4j.pax.scanner.dir.internal;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.ops4j.io.FileUtils;
+import org.ops4j.pax.scanner.ProvisionSpec;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,10 +11,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.regex.Pattern;
 import java.util.zip.ZipFile;
-import org.junit.Before;
-import org.junit.Test;
-import org.ops4j.io.FileUtils;
-import org.ops4j.pax.scanner.ProvisionSpec;
 
 public class ZipListerTest extends ListerTest
 {

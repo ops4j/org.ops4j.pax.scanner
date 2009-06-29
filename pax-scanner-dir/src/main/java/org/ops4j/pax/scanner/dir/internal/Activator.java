@@ -15,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.scanner.dir.internal;
+package org.ops4j.pax.scanner.dir.internal;
 
-import org.osgi.framework.BundleContext;
 import org.ops4j.pax.scanner.common.AbstractScannerActivator;
-import org.ops4j.pax.runner.scanner.dir.ServiceConstants;
+import org.ops4j.pax.scanner.dir.ServiceConstants;
 import org.ops4j.pax.swissbox.property.BundleContextPropertyResolver;
 import org.ops4j.util.property.PropertyResolver;
+import org.osgi.framework.BundleContext;
 
 /**
  * Bundle activator for dir scanner.

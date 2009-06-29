@@ -1,14 +1,15 @@
-package org.ops4j.pax.runner.scanner.dir.internal;
+package org.ops4j.pax.scanner.dir.internal;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.ops4j.io.FileUtils;
+import org.ops4j.pax.scanner.ProvisionSpec;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.regex.Pattern;
-import org.junit.Before;
-import org.junit.Test;
-import org.ops4j.io.FileUtils;
-import org.ops4j.pax.scanner.ProvisionSpec;
 
 public class DirectoryListerTest
     extends ListerTest

@@ -1,4 +1,6 @@
-package org.ops4j.pax.runner.scanner.dir.internal;
+package org.ops4j.pax.scanner.dir.internal;
+
+import org.ops4j.lang.NullArgumentException;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -7,7 +9,6 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
-import org.ops4j.lang.NullArgumentException;
 
 /**
  * Implementation of lister that list content of a zip file.

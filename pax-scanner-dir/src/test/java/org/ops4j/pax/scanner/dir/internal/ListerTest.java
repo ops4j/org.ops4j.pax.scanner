@@ -1,12 +1,13 @@
-package org.ops4j.pax.runner.scanner.dir.internal;
+package org.ops4j.pax.scanner.dir.internal;
+
+import org.junit.Assert;
+import org.junit.Test;
+import org.ops4j.pax.scanner.ProvisionSpec;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 import java.util.regex.Pattern;
-import org.junit.Assert;
-import org.junit.Test;
-import org.ops4j.pax.scanner.ProvisionSpec;
 
 public abstract class ListerTest
 {

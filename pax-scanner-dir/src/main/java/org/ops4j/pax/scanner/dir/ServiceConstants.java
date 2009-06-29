@@ -15,29 +15,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.scanner.dir.internal;
-
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.List;
+package org.ops4j.pax.scanner.dir;
 
 /**
- * List urls from different sources. Implementatiosn mat list urls from file directory or zip files.
+ * An enumeration of constants related to dir scanner.
  *
  * @author Alin Dreghiciu
  * @since September 04, 2007
  */
-public interface Lister
+public interface ServiceConstants
 {
 
     /**
-     * Returns a list of urls the lister knows about.
-     *
-     * @return list of urls
-     *
-     * @throws java.net.MalformedURLException If an underlying problem occurs in the OSGi framework.
+     * Service PID used for configuration.
      */
-    List<URL> list()
-        throws MalformedURLException;
+    static final String PID = "org.ops4j.pax.runner.scanner.dir";
+    /**
+     * Scanner scheme.
+     */
+    static final String SCHEMA = "scan-dir";
 
 }

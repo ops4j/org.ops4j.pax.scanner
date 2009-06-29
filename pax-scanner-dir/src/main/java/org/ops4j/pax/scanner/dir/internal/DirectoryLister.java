@@ -15,7 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.scanner.dir.internal;
+package org.ops4j.pax.scanner.dir.internal;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.ops4j.lang.NullArgumentException;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -23,9 +27,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.ops4j.lang.NullArgumentException;
 
 /**
  * Implementation of lister that list content of a system file directory.
@@ -80,7 +81,8 @@ public class DirectoryLister
             if( m_filter == null || m_filter.matcher( fileName ).matches() )
             {
                 File fileToAdd = new File( m_dir, fileName );
-                if ( !fileToAdd.isHidden() && !fileName.startsWith( "." ) ) {
+                if( !fileToAdd.isHidden() && !fileName.startsWith( "." ) )
+                {
                     content.add( fileToAdd.toURL() );
                 }
             }
