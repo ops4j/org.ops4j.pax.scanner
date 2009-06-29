@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.scanner.file;
+package org.ops4j.pax.scanner.file;
 
 /**
  * An enumeration of constants related to file scanner.
