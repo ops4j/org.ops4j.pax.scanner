@@ -17,12 +17,12 @@
  */
 package org.ops4j.pax.scanner.obr.internal;
 
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.InvalidSyntaxException;
 import org.ops4j.pax.scanner.common.AbstractScannerActivator;
 import org.ops4j.pax.scanner.obr.ServiceConstants;
 import org.ops4j.pax.swissbox.property.BundleContextPropertyResolver;
 import org.ops4j.util.property.PropertyResolver;
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.InvalidSyntaxException;
 
 /**
  * Bundle activator for obr scanner.

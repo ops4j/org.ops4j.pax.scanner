@@ -17,6 +17,10 @@
  */
 package org.ops4j.pax.scanner.maven.internal;
 
+import java.net.MalformedURLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.maven.mercury.artifact.*;
@@ -30,7 +34,11 @@ import org.apache.maven.mercury.repository.remote.m2.RemoteRepositoryM2;
 import org.apache.maven.mercury.repository.virtual.VirtualRepositoryReader;
 import org.apache.maven.mercury.transport.api.Server;
 import org.ops4j.lang.NullArgumentException;
-import org.ops4j.pax.scanner.*;
+import org.ops4j.pax.scanner.MalformedSpecificationException;
+import org.ops4j.pax.scanner.ProvisionSpec;
+import org.ops4j.pax.scanner.ScannedBundle;
+import org.ops4j.pax.scanner.Scanner;
+import org.ops4j.pax.scanner.ScannerException;
 import org.ops4j.pax.scanner.common.ScannedFileBundle;
 import org.ops4j.pax.scanner.common.ScannerConfiguration;
 import org.ops4j.pax.scanner.common.ScannerConfigurationImpl;
@@ -39,11 +47,6 @@ import org.ops4j.pax.url.maven.commons.MavenConfigurationImpl;
 import org.ops4j.pax.url.maven.commons.MavenRepositoryURL;
 import org.ops4j.pax.url.maven.commons.MavenSettingsImpl;
 import org.ops4j.util.property.PropertyResolver;
-
-import java.net.MalformedURLException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * A scanner that scans maven artifacts for main artifact (if a jar/bundle), direct dependencies and transitive

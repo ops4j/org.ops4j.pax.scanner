@@ -17,16 +17,6 @@
  */
 package org.ops4j.pax.scanner.composite.internal;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.ops4j.lang.NullArgumentException;
-import org.ops4j.net.URLUtils;
-import org.ops4j.pax.runner.commons.properties.SystemPropertyUtils;
-import org.ops4j.pax.scanner.*;
-import org.ops4j.pax.scanner.common.ScannerConfiguration;
-import org.ops4j.pax.scanner.common.ScannerConfigurationImpl;
-import org.ops4j.util.property.PropertyResolver;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -36,6 +26,21 @@ import java.util.List;
 import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.ops4j.lang.NullArgumentException;
+import org.ops4j.net.URLUtils;
+import org.ops4j.pax.scanner.MalformedSpecificationException;
+import org.ops4j.pax.scanner.ProvisionService;
+import org.ops4j.pax.scanner.ProvisionSpec;
+import org.ops4j.pax.scanner.ScannedBundle;
+import org.ops4j.pax.scanner.ScannedBundleBean;
+import org.ops4j.pax.scanner.Scanner;
+import org.ops4j.pax.scanner.ScannerException;
+import org.ops4j.pax.scanner.common.ScannerConfiguration;
+import org.ops4j.pax.scanner.common.ScannerConfigurationImpl;
+import org.ops4j.pax.scanner.common.SystemPropertyUtils;
+import org.ops4j.util.property.PropertyResolver;
 
 /**
  * A scanner that scans plain text file containing other scanning specs.

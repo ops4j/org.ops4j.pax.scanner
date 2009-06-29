@@ -17,9 +17,12 @@
  */
 package org.ops4j.pax.scanner.dir.internal;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.net.MalformedURLException;
+import java.util.List;
 import static org.easymock.EasyMock.*;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.ops4j.io.FileUtils;
@@ -30,11 +33,6 @@ import org.ops4j.pax.scanner.ScannedBundle;
 import org.ops4j.pax.scanner.ScannerException;
 import org.ops4j.pax.scanner.common.ScannerConfiguration;
 import org.ops4j.util.property.PropertyResolver;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.net.MalformedURLException;
-import java.util.List;
 
 public class DirScannerTest
 {

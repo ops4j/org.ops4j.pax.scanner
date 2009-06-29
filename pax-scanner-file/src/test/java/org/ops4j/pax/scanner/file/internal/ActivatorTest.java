@@ -17,7 +17,7 @@
  */
 package org.ops4j.pax.scanner.file.internal;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class ActivatorTest

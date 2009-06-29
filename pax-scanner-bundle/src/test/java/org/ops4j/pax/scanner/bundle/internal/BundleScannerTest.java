@@ -17,9 +17,9 @@
  */
 package org.ops4j.pax.scanner.bundle.internal;
 
+import java.util.List;
 import static org.easymock.EasyMock.*;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 import org.junit.Test;
 import org.ops4j.lang.NullArgumentException;
 import org.ops4j.pax.scanner.MalformedSpecificationException;
@@ -28,8 +28,6 @@ import org.ops4j.pax.scanner.ScannedBundle;
 import org.ops4j.pax.scanner.ScannerException;
 import org.ops4j.pax.scanner.common.ScannerConfiguration;
 import org.ops4j.util.property.PropertyResolver;
-
-import java.util.List;
 
 public class BundleScannerTest
 {

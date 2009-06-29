@@ -17,27 +17,30 @@
  */
 package org.ops4j.pax.scanner.pom.internal;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.ops4j.lang.NullArgumentException;
-import org.ops4j.net.URLUtils;
-import org.ops4j.pax.runner.commons.properties.SystemPropertyUtils;
-import org.ops4j.pax.scanner.*;
-import org.ops4j.pax.scanner.common.ScannedFileBundle;
-import org.ops4j.pax.scanner.common.ScannerConfiguration;
-import org.ops4j.pax.scanner.common.ScannerConfigurationImpl;
-import org.ops4j.pax.scanner.pom.ServiceConstants;
-import org.ops4j.util.property.PropertyResolver;
-import org.ops4j.util.xml.XmlUtils;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.parsers.ParserConfigurationException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.xml.sax.SAXException;
+import org.ops4j.lang.NullArgumentException;
+import org.ops4j.net.URLUtils;
+import org.ops4j.pax.scanner.MalformedSpecificationException;
+import org.ops4j.pax.scanner.ProvisionSpec;
+import org.ops4j.pax.scanner.ScannedBundle;
+import org.ops4j.pax.scanner.Scanner;
+import org.ops4j.pax.scanner.ScannerException;
+import org.ops4j.pax.scanner.common.ScannedFileBundle;
+import org.ops4j.pax.scanner.common.ScannerConfiguration;
+import org.ops4j.pax.scanner.common.ScannerConfigurationImpl;
+import org.ops4j.pax.scanner.common.SystemPropertyUtils;
+import org.ops4j.pax.scanner.pom.ServiceConstants;
+import org.ops4j.util.property.PropertyResolver;
+import org.ops4j.util.xml.XmlUtils;
 
 /**
  * A scanner that scans maven 2 pom files.

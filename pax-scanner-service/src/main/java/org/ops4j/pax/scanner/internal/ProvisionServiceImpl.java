@@ -17,17 +17,24 @@
  */
 package org.ops4j.pax.scanner.internal;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.ops4j.lang.NullArgumentException;
-import org.ops4j.pax.scanner.*;
-import org.osgi.framework.BundleContext;
-import org.osgi.service.startlevel.StartLevel;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.osgi.framework.BundleContext;
+import org.osgi.service.startlevel.StartLevel;
+import org.ops4j.lang.NullArgumentException;
+import org.ops4j.pax.scanner.InstallableBundle;
+import org.ops4j.pax.scanner.InstallableBundles;
+import org.ops4j.pax.scanner.MalformedSpecificationException;
+import org.ops4j.pax.scanner.ProvisionService;
+import org.ops4j.pax.scanner.ProvisionSpec;
+import org.ops4j.pax.scanner.ScannedBundle;
+import org.ops4j.pax.scanner.Scanner;
+import org.ops4j.pax.scanner.ScannerException;
+import org.ops4j.pax.scanner.UnsupportedSchemaException;
 
 /**
  * Implementation of Provision Service.

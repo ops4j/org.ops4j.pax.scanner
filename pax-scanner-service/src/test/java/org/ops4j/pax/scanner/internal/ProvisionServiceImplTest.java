@@ -17,16 +17,20 @@
  */
 package org.ops4j.pax.scanner.internal;
 
-import static org.easymock.EasyMock.*;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import org.junit.Test;
-import org.ops4j.pax.scanner.*;
-import org.osgi.framework.BundleContext;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import static org.easymock.EasyMock.*;
+import static org.junit.Assert.*;
+import org.junit.Test;
+import org.osgi.framework.BundleContext;
+import org.ops4j.pax.scanner.InstallableBundles;
+import org.ops4j.pax.scanner.MalformedSpecificationException;
+import org.ops4j.pax.scanner.ProvisionSpec;
+import org.ops4j.pax.scanner.ScannedBundle;
+import org.ops4j.pax.scanner.Scanner;
+import org.ops4j.pax.scanner.ScannerException;
+import org.ops4j.pax.scanner.UnsupportedSchemaException;
 
 public class ProvisionServiceImplTest
 {

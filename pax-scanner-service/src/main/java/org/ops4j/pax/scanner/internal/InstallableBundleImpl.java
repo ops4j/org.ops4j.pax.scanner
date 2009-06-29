@@ -17,13 +17,13 @@
  */
 package org.ops4j.pax.scanner.internal;
 
-import org.ops4j.lang.NullArgumentException;
-import org.ops4j.pax.scanner.InstallableBundle;
-import org.ops4j.pax.scanner.ScannedBundle;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleException;
 import org.osgi.service.startlevel.StartLevel;
+import org.ops4j.lang.NullArgumentException;
+import org.ops4j.pax.scanner.InstallableBundle;
+import org.ops4j.pax.scanner.ScannedBundle;
 
 public class InstallableBundleImpl
     implements InstallableBundle

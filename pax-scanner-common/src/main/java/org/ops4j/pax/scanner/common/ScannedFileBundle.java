@@ -17,11 +17,10 @@
  */
 package org.ops4j.pax.scanner.common;
 
+import java.net.MalformedURLException;
 import org.ops4j.pax.scanner.MalformedSpecificationException;
 import org.ops4j.pax.scanner.ScannedBundleBean;
 import org.ops4j.pax.scanner.ServiceConstants;
-
-import java.net.MalformedURLException;
 
 /**
  * Represents an entry in the scanned file..

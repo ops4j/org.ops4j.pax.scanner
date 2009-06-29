@@ -17,16 +17,15 @@
  */
 package org.ops4j.pax.scanner.dir.internal;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.ops4j.lang.NullArgumentException;
-
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.ops4j.lang.NullArgumentException;
 
 /**
  * Implementation of lister that list content of a system file directory.

@@ -17,13 +17,12 @@
  */
 package org.ops4j.pax.scanner.internal;
 
+import java.util.Iterator;
+import java.util.List;
+import org.osgi.framework.BundleException;
 import org.ops4j.lang.NullArgumentException;
 import org.ops4j.pax.scanner.InstallableBundle;
 import org.ops4j.pax.scanner.InstallableBundles;
-import org.osgi.framework.BundleException;
-
-import java.util.Iterator;
-import java.util.List;
 
 public class InstallableBundlesImpl
     implements InstallableBundles

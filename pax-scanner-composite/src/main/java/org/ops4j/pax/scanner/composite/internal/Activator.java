@@ -17,15 +17,18 @@
  */
 package org.ops4j.pax.scanner.composite.internal;
 
-import org.ops4j.pax.scanner.*;
+import java.util.List;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+import org.ops4j.pax.scanner.InstallableBundles;
+import org.ops4j.pax.scanner.MalformedSpecificationException;
+import org.ops4j.pax.scanner.ProvisionService;
+import org.ops4j.pax.scanner.ScannedBundle;
+import org.ops4j.pax.scanner.ScannerException;
 import org.ops4j.pax.scanner.common.AbstractScannerActivator;
 import org.ops4j.pax.scanner.composite.ServiceConstants;
 import org.ops4j.pax.swissbox.property.BundleContextPropertyResolver;
 import org.ops4j.util.property.PropertyResolver;
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
-
-import java.util.List;
 
 /**
  * Bundle activator for composite scanner.

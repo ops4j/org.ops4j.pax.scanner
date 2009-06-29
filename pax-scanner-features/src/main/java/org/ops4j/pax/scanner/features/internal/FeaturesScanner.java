@@ -17,18 +17,21 @@
  */
 package org.ops4j.pax.scanner.features.internal;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.servicemix.kernel.gshell.features.Feature;
 import org.ops4j.lang.NullArgumentException;
-import org.ops4j.pax.scanner.*;
+import org.ops4j.pax.scanner.ProvisionSpec;
+import org.ops4j.pax.scanner.ScannedBundle;
+import org.ops4j.pax.scanner.ScannedBundleBean;
+import org.ops4j.pax.scanner.Scanner;
+import org.ops4j.pax.scanner.ScannerException;
 import org.ops4j.pax.scanner.common.ScannerConfiguration;
 import org.ops4j.pax.scanner.common.ScannerConfigurationImpl;
 import org.ops4j.pax.scanner.features.ServiceConstants;
 import org.ops4j.util.property.PropertyResolver;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A scanner that scans Apache ServiceMix Kernel features files (xml).

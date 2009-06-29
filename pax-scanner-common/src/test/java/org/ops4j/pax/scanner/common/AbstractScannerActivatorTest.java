@@ -17,14 +17,13 @@
  */
 package org.ops4j.pax.scanner.common;
 
+import java.util.Dictionary;
 import static org.easymock.EasyMock.*;
 import org.junit.Test;
-import org.ops4j.pax.scanner.Scanner;
-import org.ops4j.util.property.PropertyResolver;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.cm.ManagedService;
-
-import java.util.Dictionary;
+import org.ops4j.pax.scanner.Scanner;
+import org.ops4j.util.property.PropertyResolver;
 
 public class AbstractScannerActivatorTest
 {

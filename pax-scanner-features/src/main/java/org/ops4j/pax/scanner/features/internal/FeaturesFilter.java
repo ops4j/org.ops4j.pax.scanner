@@ -17,14 +17,13 @@
  */
 package org.ops4j.pax.scanner.features.internal;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import org.apache.servicemix.kernel.gshell.features.internal.FeatureImpl;
 import org.ops4j.lang.NullArgumentException;
 import org.ops4j.pax.scanner.ProvisionSpec;
 import org.ops4j.pax.scanner.ScannerException;
 import org.ops4j.pax.scanner.features.ServiceConstants;
-
-import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * Feature filter.

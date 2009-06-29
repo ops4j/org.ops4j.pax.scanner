@@ -17,18 +17,6 @@
  */
 package org.ops4j.pax.scanner.obr.script.internal;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.ops4j.pax.swissbox.property.BundleContextPropertyResolver;
-import org.ops4j.pax.swissbox.tracker.ReplaceableService;
-import org.ops4j.pax.swissbox.tracker.ReplaceableServiceListener;
-import org.osgi.framework.BundleActivator;
-import org.osgi.framework.BundleContext;
-import org.osgi.service.obr.RepositoryAdmin;
-import org.osgi.service.obr.Requirement;
-import org.osgi.service.obr.Resolver;
-import org.osgi.service.obr.Resource;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -37,6 +25,17 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.service.obr.RepositoryAdmin;
+import org.osgi.service.obr.Requirement;
+import org.osgi.service.obr.Resolver;
+import org.osgi.service.obr.Resource;
+import org.ops4j.pax.swissbox.property.BundleContextPropertyResolver;
+import org.ops4j.pax.swissbox.tracker.ReplaceableService;
+import org.ops4j.pax.swissbox.tracker.ReplaceableServiceListener;
 
 /**
  * @author Alin Dreghiciu

@@ -17,11 +17,9 @@
  */
 package org.ops4j.pax.scanner;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import org.junit.Test;
-
 import java.net.MalformedURLException;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
 /**
  * {@link ProvisionSpec} unit tests.

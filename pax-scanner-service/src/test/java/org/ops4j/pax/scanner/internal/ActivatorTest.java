@@ -17,16 +17,15 @@
  */
 package org.ops4j.pax.scanner.internal;
 
+import java.util.Dictionary;
 import static org.easymock.EasyMock.*;
 import org.junit.Test;
-import org.ops4j.pax.scanner.ProvisionService;
-import org.ops4j.pax.scanner.Scanner;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.Filter;
 import org.osgi.framework.ServiceListener;
 import org.osgi.service.startlevel.StartLevel;
-
-import java.util.Dictionary;
+import org.ops4j.pax.scanner.ProvisionService;
+import org.ops4j.pax.scanner.Scanner;
 
 public class ActivatorTest
 {
