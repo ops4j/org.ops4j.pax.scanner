@@ -1,5 +1,5 @@
 /*
- * Copyright 2006 Niclas Hedhman.
+ * Copyright 2007 Alin Dreghiciu.
  *
  * Licensed  under the  Apache License,  Version 2.0  (the "License");
  * you may not use  this file  except in  compliance with the License.
@@ -13,13 +13,26 @@
  * implied.
  *
  * See the License for the specific language governing permissions and
- * limitations under the License. 
+ * limitations under the License.
  */
-package org.ops4j.pax.runner.scanner.pom.internal;
+package org.ops4j.pax.scanner.pom;
 
-public interface Recorder
+/**
+ * An enumeration of constants related to poms scanner.
+ *
+ * @author Alin Dreghiciu
+ * @since September 17, 2007
+ */
+public interface ServiceConstants
 {
 
-    void record( String string );
+    /**
+     * Service PID used for configuration.
+     */
+    static final String PID = "org.ops4j.pax.runner.scanner.pom";
+    /**
+     * Scanner scheme.
+     */
+    static final String SCHEMA = "scan-pom";
 
 }
