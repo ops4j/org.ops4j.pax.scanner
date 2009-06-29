@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.scanner.maven;
+package org.ops4j.pax.scanner.maven;
 
 /**
  * An enumeration of constants related to maven scanner.

@@ -15,19 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.scanner.maven.internal;
+package org.ops4j.pax.scanner.maven.internal;
 
-import java.net.MalformedURLException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.maven.mercury.artifact.Artifact;
-import org.apache.maven.mercury.artifact.ArtifactBasicMetadata;
-import org.apache.maven.mercury.artifact.ArtifactMetadata;
-import org.apache.maven.mercury.artifact.Quality;
-import org.apache.maven.mercury.artifact.QualityRange;
+import org.apache.maven.mercury.artifact.*;
 import org.apache.maven.mercury.builder.api.DependencyProcessor;
 import org.apache.maven.mercury.repository.api.ArtifactBasicResults;
 import org.apache.maven.mercury.repository.api.ArtifactResults;
@@ -38,18 +30,20 @@ import org.apache.maven.mercury.repository.remote.m2.RemoteRepositoryM2;
 import org.apache.maven.mercury.repository.virtual.VirtualRepositoryReader;
 import org.apache.maven.mercury.transport.api.Server;
 import org.ops4j.lang.NullArgumentException;
-import org.ops4j.pax.scanner.ScannedBundle;
 import org.ops4j.pax.scanner.*;
-import org.ops4j.pax.scanner.ScannerException;
 import org.ops4j.pax.scanner.common.ScannedFileBundle;
 import org.ops4j.pax.scanner.common.ScannerConfiguration;
 import org.ops4j.pax.scanner.common.ScannerConfigurationImpl;
-import org.ops4j.pax.runner.scanner.maven.ServiceConstants;
 import org.ops4j.pax.url.maven.commons.MavenConfiguration;
 import org.ops4j.pax.url.maven.commons.MavenConfigurationImpl;
 import org.ops4j.pax.url.maven.commons.MavenRepositoryURL;
 import org.ops4j.pax.url.maven.commons.MavenSettingsImpl;
 import org.ops4j.util.property.PropertyResolver;
+
+import java.net.MalformedURLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * A scanner that scans maven artifacts for main artifact (if a jar/bundle), direct dependencies and transitive
@@ -344,7 +338,7 @@ public class MavenScanner
      */
     ScannerConfiguration createScannerConfiguration()
     {
-        return new ScannerConfigurationImpl( m_propertyResolver, ServiceConstants.PID );
+        return new ScannerConfigurationImpl( m_propertyResolver, org.ops4j.pax.scanner.maven.ServiceConstants.PID );
     }
 
     /**
@@ -355,7 +349,7 @@ public class MavenScanner
     MavenConfiguration createMavenConfiguration()
     {
         final MavenConfigurationImpl configuration =
-            new MavenConfigurationImpl( m_propertyResolver, ServiceConstants.PID );
+            new MavenConfigurationImpl( m_propertyResolver, org.ops4j.pax.scanner.maven.ServiceConstants.PID );
         configuration.setSettings( new MavenSettingsImpl( configuration.getSettingsFileUrl() ) );
         return configuration;
     }

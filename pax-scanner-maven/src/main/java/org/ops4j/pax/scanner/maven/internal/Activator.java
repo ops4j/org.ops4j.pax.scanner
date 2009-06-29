@@ -15,13 +15,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.scanner.maven.internal;
+package org.ops4j.pax.scanner.maven.internal;
 
-import org.osgi.framework.BundleContext;
 import org.ops4j.pax.scanner.common.AbstractScannerActivator;
-import org.ops4j.pax.runner.scanner.maven.ServiceConstants;
+import org.ops4j.pax.scanner.maven.ServiceConstants;
 import org.ops4j.pax.swissbox.property.BundleContextPropertyResolver;
 import org.ops4j.util.property.PropertyResolver;
+import org.osgi.framework.BundleContext;
 
 /**
  * Bundle activator for maven scanner.

@@ -23,8 +23,8 @@
   </description>
 
   <properties>
-    <bundle.symbolicName>org.ops4j.pax.runner.scanner.maven</bundle.symbolicName>
-    <bundle.namespace>org.ops4j.pax.runner.scanner.maven</bundle.namespace>
+    <bundle.symbolicName>org.ops4j.pax.scanner.maven</bundle.symbolicName>
+    <bundle.namespace>org.ops4j.pax.scanner.maven</bundle.namespace>
   </properties>
 
   <build>
