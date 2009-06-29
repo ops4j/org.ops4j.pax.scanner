@@ -1,7 +1,7 @@
 package org.ops4j.pax.scanner.bundle.internal;
 
-import org.ops4j.pax.scanner.common.AbstractScannerActivator;
 import org.ops4j.pax.scanner.bundle.ServiceConstants;
+import org.ops4j.pax.scanner.common.AbstractScannerActivator;
 import org.ops4j.pax.swissbox.property.BundleContextPropertyResolver;
 import org.ops4j.util.property.PropertyResolver;
 import org.osgi.framework.BundleContext;

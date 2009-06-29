@@ -20,10 +20,10 @@ package org.ops4j.pax.scanner.bundle.internal;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.ops4j.lang.NullArgumentException;
+import org.ops4j.pax.scanner.*;
 import org.ops4j.pax.scanner.common.ScannedFileBundle;
 import org.ops4j.pax.scanner.common.ScannerConfiguration;
 import org.ops4j.pax.scanner.common.ScannerConfigurationImpl;
-import org.ops4j.pax.scanner.*;
 import org.ops4j.util.property.PropertyResolver;
 
 import java.net.MalformedURLException;

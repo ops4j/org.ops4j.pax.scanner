@@ -22,11 +22,11 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 import org.ops4j.lang.NullArgumentException;
-import org.ops4j.pax.scanner.common.ScannerConfiguration;
 import org.ops4j.pax.scanner.MalformedSpecificationException;
 import org.ops4j.pax.scanner.ProvisionSpec;
 import org.ops4j.pax.scanner.ScannedBundle;
 import org.ops4j.pax.scanner.ScannerException;
+import org.ops4j.pax.scanner.common.ScannerConfiguration;
 import org.ops4j.util.property.PropertyResolver;
 
 import java.util.List;
