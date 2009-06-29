@@ -24,8 +24,8 @@
   </description>
 
   <properties>
-    <bundle.symbolicName>org.ops4j.pax.runner.scanner.bundle</bundle.symbolicName>
-    <bundle.namespace>org.ops4j.pax.runner.scanner.bundle</bundle.namespace>
+    <bundle.symbolicName>org.ops4j.pax.scanner.bundle</bundle.symbolicName>
+    <bundle.namespace>org.ops4j.pax.scanner.bundle</bundle.namespace>
   </properties>
 
   <build>
