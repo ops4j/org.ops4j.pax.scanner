@@ -15,7 +15,7 @@ Import-Package:\
   org.osgi.framework; version="[1.0.0,2.0.0)",\
   org.osgi.service.cm; version="[1.2.0,2.0.0)",\
   org.osgi.service.prefs,\
-  org.ops4j.pax.runner.provision; version="${pom.version}",\
+  org.ops4j.pax.scanner; version="${pom.version}",\
   org.w3c.dom,\
   org.xml.sax,\
   !org.apache.servicemix.kernel.filemonitor,\
