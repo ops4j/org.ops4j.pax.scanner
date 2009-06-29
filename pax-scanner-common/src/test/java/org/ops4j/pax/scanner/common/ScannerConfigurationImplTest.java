@@ -15,10 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.provision.scanner;
+package org.ops4j.pax.scanner.common;
 
 import static org.easymock.EasyMock.*;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 import org.ops4j.util.property.PropertyResolver;
 

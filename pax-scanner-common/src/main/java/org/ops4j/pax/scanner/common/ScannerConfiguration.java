@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.provision.scanner;
+package org.ops4j.pax.scanner.common;
 
 /**
  * Scanner generic configuration.
@@ -52,6 +52,6 @@ public interface ScannerConfiguration
      *
      * @return true if the certificate should be checked
      */
-    Boolean getCertificateCheck();    
+    Boolean getCertificateCheck();
 
 }

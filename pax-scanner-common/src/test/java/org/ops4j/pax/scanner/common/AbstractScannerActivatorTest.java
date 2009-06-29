@@ -15,15 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.provision.scanner;
+package org.ops4j.pax.scanner.common;
 
-import java.util.Dictionary;
 import static org.easymock.EasyMock.*;
 import org.junit.Test;
-import org.osgi.framework.BundleContext;
-import org.osgi.service.cm.ManagedService;
 import org.ops4j.pax.scanner.Scanner;
 import org.ops4j.util.property.PropertyResolver;
+import org.osgi.framework.BundleContext;
+import org.osgi.service.cm.ManagedService;
+
+import java.util.Dictionary;
 
 public class AbstractScannerActivatorTest
 {

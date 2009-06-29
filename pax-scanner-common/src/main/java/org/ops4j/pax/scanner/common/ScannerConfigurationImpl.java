@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.provision.scanner;
+package org.ops4j.pax.scanner.common;
 
 import org.ops4j.lang.NullArgumentException;
 import org.ops4j.pax.scanner.ServiceConstants;
@@ -134,5 +134,5 @@ public class ScannerConfigurationImpl
         }
         return get( m_pid + ServiceConstants.PROPERTY_CERTIFICATE_CHECK );
     }
-    
+
 }

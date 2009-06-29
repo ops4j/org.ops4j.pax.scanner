@@ -24,7 +24,7 @@ import org.ops4j.pax.scanner.MalformedSpecificationException;
 import org.ops4j.pax.scanner.*;
 import org.ops4j.pax.scanner.ScannedBundle;
 import org.ops4j.pax.scanner.ScannerException;
-import org.ops4j.pax.runner.provision.scanner.AbstractScannerActivator;
+import org.ops4j.pax.scanner.common.AbstractScannerActivator;
 import org.ops4j.pax.runner.scanner.composite.ServiceConstants;
 import org.ops4j.pax.swissbox.property.BundleContextPropertyResolver;
 import org.ops4j.util.property.PropertyResolver;

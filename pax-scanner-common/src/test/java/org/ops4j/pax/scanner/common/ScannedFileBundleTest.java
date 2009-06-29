@@ -15,11 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.provision.scanner;
+package org.ops4j.pax.scanner.common;
+
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 import java.net.MalformedURLException;
-import static org.junit.Assert.*;
-import org.junit.Test;
 
 public class ScannedFileBundleTest
 {

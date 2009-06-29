@@ -15,23 +15,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.provision.scanner;
+package org.ops4j.pax.scanner.common;
 
-import java.util.Dictionary;
-import java.util.Hashtable;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.ops4j.lang.NullArgumentException;
+import org.ops4j.pax.scanner.Scanner;
+import org.ops4j.pax.swissbox.property.BundleContextPropertyResolver;
+import org.ops4j.util.property.DictionaryPropertyResolver;
+import org.ops4j.util.property.PropertyResolver;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.Constants;
 import org.osgi.framework.ServiceRegistration;
 import org.osgi.service.cm.ConfigurationException;
 import org.osgi.service.cm.ManagedService;
-import org.ops4j.lang.NullArgumentException;
-import org.ops4j.pax.scanner.Scanner;
-import org.ops4j.pax.swissbox.property.BundleContextPropertyResolver;
-import org.ops4j.util.property.DictionaryPropertyResolver;
-import org.ops4j.util.property.PropertyResolver;
+
+import java.util.Dictionary;
+import java.util.Hashtable;
 
 /**
  * Abstract bundle activator for scanners.

@@ -38,8 +38,8 @@ import org.ops4j.pax.scanner.ScannedBundle;
 import org.ops4j.pax.scanner.ScannedBundleBean;
 import org.ops4j.pax.scanner.Scanner;
 import org.ops4j.pax.scanner.ScannerException;
-import org.ops4j.pax.runner.provision.scanner.ScannerConfiguration;
-import org.ops4j.pax.runner.provision.scanner.ScannerConfigurationImpl;
+import org.ops4j.pax.scanner.common.ScannerConfiguration;
+import org.ops4j.pax.scanner.common.ScannerConfigurationImpl;
 import org.ops4j.pax.runner.scanner.composite.ServiceConstants;
 import org.ops4j.util.property.PropertyResolver;
 

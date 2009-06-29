@@ -33,7 +33,7 @@ import org.ops4j.pax.scanner.ProvisionSpec;
 import org.ops4j.pax.scanner.*;
 import org.ops4j.pax.scanner.ScannedBundle;
 import org.ops4j.pax.scanner.ScannerException;
-import org.ops4j.pax.runner.provision.scanner.ScannerConfiguration;
+import org.ops4j.pax.scanner.common.ScannerConfiguration;
 import org.ops4j.util.property.PropertyResolver;
 
 /**
