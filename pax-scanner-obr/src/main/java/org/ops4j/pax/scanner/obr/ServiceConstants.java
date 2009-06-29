@@ -15,24 +15,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ops4j.pax.runner.scanner.obr.internal;
+package org.ops4j.pax.scanner.obr;
 
 /**
- * Filter syntax validator
+ * An enumeration of constants related to obr scanner.
  *
  * @author Alin Dreghiciu
  * @since 0.7.0, February 04, 2008
  */
-interface FilterValidator
+public interface ServiceConstants
 {
 
     /**
-     * Validates filter syntax.
-     *
-     * @param filter to validate
-     *
-     * @return true if the syntax is a valid OSGi filter syntax
+     * Service PID used for configuration.
      */
-    boolean validate( String filter );
+    static final String PID = "org.ops4j.pax.runner.scanner.obr";
+    /**
+     * Scanner scheme.
+     */
+    static final String SCHEMA = "scan-obr";
 
 }
