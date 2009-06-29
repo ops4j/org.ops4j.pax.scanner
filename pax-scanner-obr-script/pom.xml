@@ -23,8 +23,8 @@
   </description>
 
   <properties>
-    <bundle.symbolicName>org.ops4j.pax.runner.obr.script</bundle.symbolicName>
-    <bundle.namespace>org.ops4j.pax.runner.obr.script</bundle.namespace>
+    <bundle.symbolicName>org.ops4j.pax.scanner.obr.script</bundle.symbolicName>
+    <bundle.namespace>org.ops4j.pax.scanner..obr.script</bundle.namespace>
   </properties>
 
   <build>
