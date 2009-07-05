@@ -127,7 +127,7 @@ public class ObrScanner
                 final Integer defaultStartLevel = getDefaultStartLevel( provisionSpec, config );
                 final Boolean defaultStart = getDefaultStart( provisionSpec, config );
                 final Boolean defaultUpdate = getDefaultUpdate( provisionSpec, config );
-                // we always install the obr and pax runner obr script
+                // we always install the obr and pax scanner obr script
                 scannedBundles.add(
                     new ScannedFileBundle(
                         "mvn:org.apache.felix/org.apache.felix.bundlerepository",
@@ -138,7 +138,7 @@ public class ObrScanner
                 );
                 scannedBundles.add(
                     new ScannedFileBundle(
-                        "mvn:org.ops4j.pax.runner/pax-runner-scanner-obr-script",
+                        "mvn:org.ops4j.pax.scanner/pax-scanner-obr-script",
                         defaultStartLevel,
                         defaultStart,
                         defaultUpdate
@@ -210,7 +210,7 @@ public class ObrScanner
     {
         if( m_scriptFile == null )
         {
-            m_scriptFile = File.createTempFile( "pax.runner.obr.script", ".txt" );
+            m_scriptFile = File.createTempFile( "pax.scanner.obr.script", ".txt" );
             // TODO remove the script file on exit
             //m_scriptFile.deleteOnExit();
             LOG.trace( "Created script file [" + m_scriptFile.getCanonicalPath() + "]" );

@@ -50,8 +50,7 @@ public final class Activator
             new BundleContextPropertyResolver( bundleContext ),
             new ProvisionService()
             {
-                //TODO looking up th eservice each time is not good performance wise.
-                // The problem is that using a service tracker will fail due to our RunnerBundle with a ClassCastException
+                //TODO looking up the service each time is not good performance wise.
                 public List<ScannedBundle> scan( String spec )
                     throws MalformedSpecificationException, ScannerException
                 {
