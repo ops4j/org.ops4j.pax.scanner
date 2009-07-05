@@ -49,6 +49,7 @@
         <module>pax-scanner-obr</module>
         <module>pax-scanner-obr-script</module>
         <module>pax-scanner-pom</module>
+        <module>pax-scanner-all-scanners</module>
       </modules>
     </profile>
     <profile>

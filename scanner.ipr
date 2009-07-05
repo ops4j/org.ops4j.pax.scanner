@@ -225,6 +225,7 @@
   <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/pax-scanner-all-scanners/pax-scanner-all-scanners.iml" filepath="$PROJECT_DIR$/pax-scanner-all-scanners/pax-scanner-all-scanners.iml" />
       <module fileurl="file://$PROJECT_DIR$/pax-scanner-bundle/pax-scanner-bundle.iml" filepath="$PROJECT_DIR$/pax-scanner-bundle/pax-scanner-bundle.iml" />
       <module fileurl="file://$PROJECT_DIR$/pax-scanner-common/pax-scanner-common.iml" filepath="$PROJECT_DIR$/pax-scanner-common/pax-scanner-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/pax-scanner-composite/pax-scanner-composite.iml" filepath="$PROJECT_DIR$/pax-scanner-composite/pax-scanner-composite.iml" />

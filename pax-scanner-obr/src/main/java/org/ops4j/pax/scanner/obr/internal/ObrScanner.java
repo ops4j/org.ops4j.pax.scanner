@@ -147,7 +147,7 @@ public class ObrScanner
 
                 // and we set the script name
                 final File scriptFile = createScript();
-                System.setProperty( "org.ops4j.pax.runner.scanner.obr.script", scriptFile.toURI().toASCIIString() );
+                System.setProperty( "org.ops4j.pax.scanner.obr.script", scriptFile.toURI().toASCIIString() );
                 // and repositories property
                 System.setProperty( "obr.repository.url", m_propertyResolver.get( "obr.repository.url" ) );
 

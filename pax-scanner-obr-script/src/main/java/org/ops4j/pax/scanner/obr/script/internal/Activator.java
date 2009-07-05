@@ -55,7 +55,7 @@ public class Activator
     {
         final List<String> filters =
             readScript(
-                new BundleContextPropertyResolver( bundleContext ).get( "org.ops4j.pax.runner.scanner.obr.script" )
+                new BundleContextPropertyResolver( bundleContext ).get( "org.ops4j.pax.scanner.obr.script" )
             );
         final ReplaceableService<RepositoryAdmin> replaceableService =
             new ReplaceableService<RepositoryAdmin>(

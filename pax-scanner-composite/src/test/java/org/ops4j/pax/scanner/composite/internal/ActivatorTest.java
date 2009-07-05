@@ -32,7 +32,7 @@ public class ActivatorTest
     @Test
     public void getPID()
     {
-        assertEquals( "PID", "org.ops4j.pax.runner.scanner.composite", new Activator().getPID() );
+        assertEquals( "PID", "org.ops4j.pax.scanner.composite", new Activator().getPID() );
     }
 
     @Test

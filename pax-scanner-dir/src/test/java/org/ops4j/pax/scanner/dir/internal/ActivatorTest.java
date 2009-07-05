@@ -26,7 +26,7 @@ public class ActivatorTest
     @Test
     public void getPID()
     {
-        assertEquals( "PID", "org.ops4j.pax.runner.scanner.dir", new Activator().getPID() );
+        assertEquals( "PID", "org.ops4j.pax.scanner.dir", new Activator().getPID() );
     }
 
     @Test

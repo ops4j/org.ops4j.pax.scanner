@@ -29,7 +29,7 @@ public interface ServiceConstants
     /**
      * Service PID used for configuration.
      */
-    static final String PID = "org.ops4j.pax.runner.scanner.bundle";
+    static final String PID = "org.ops4j.pax.scanner.bundle";
     /**
      * Scanner scheme.
      */
