@@ -38,6 +38,7 @@ public class ScannerConfigurationImpl
      * Property resolver. Cannot be null.
      */
     private final PropertyResolver m_propertyResolver;
+
     /**
      * Persistent identifier for scanner.
      */
@@ -135,4 +136,23 @@ public class ScannerConfigurationImpl
         return get( m_pid + ServiceConstants.PROPERTY_CERTIFICATE_CHECK );
     }
 
+    /**
+     * Getter.
+     *
+     * @return PID
+     */
+    protected String getPid()
+    {
+        return m_pid;
+    }
+
+    /**
+     * Getter.
+     *
+     * @return property resolver
+     */
+    public PropertyResolver getPropertyResolver()
+    {
+        return m_propertyResolver;
+    }
 }

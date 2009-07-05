@@ -36,9 +36,7 @@ import org.ops4j.pax.scanner.Scanner;
 import org.ops4j.pax.scanner.ScannerException;
 import org.ops4j.pax.scanner.common.ScannedFileBundle;
 import org.ops4j.pax.scanner.common.ScannerConfiguration;
-import org.ops4j.pax.scanner.common.ScannerConfigurationImpl;
 import org.ops4j.pax.scanner.common.SystemPropertyUtils;
-import org.ops4j.pax.scanner.pom.ServiceConstants;
 import org.ops4j.util.property.PropertyResolver;
 import org.ops4j.util.xml.XmlUtils;
 
@@ -83,7 +81,7 @@ public class PomScanner
 
         LOGGER.debug( "Scanning [" + provisionSpec.getPath() + "]" );
         List<ScannedBundle> scannedBundles = new ArrayList<ScannedBundle>();
-        ScannerConfiguration config = createConfiguration();
+        PomScannerConfiguration config = createConfiguration();
         InputStream inputStream = null;
         try
         {
@@ -97,7 +95,7 @@ public class PomScanner
                 final Integer defaultStartLevel = getDefaultStartLevel( provisionSpec, config );
                 final Boolean defaultStart = getDefaultStart( provisionSpec, config );
                 final Boolean defaultUpdate = getDefaultUpdate( provisionSpec, config );
-                final String mainArtifactURL = composeURL( doc.getDocumentElement(), "packaging" );
+                final String mainArtifactURL = composeURL( doc.getDocumentElement(), "packaging", config );
                 if( mainArtifactURL != null )
                 {
                     scannedBundles.add(
@@ -122,7 +120,7 @@ public class PomScanner
                 {
                     for( Element dependency : dependencies )
                     {
-                        final String dependencyURL = composeURL( dependency, "type" );
+                        final String dependencyURL = composeURL( dependency, "type", config );
                         if( dependencyURL != null )
                         {
                             final ScannedFileBundle scannedFileBundle = new ScannedFileBundle(
@@ -163,13 +161,16 @@ public class PomScanner
      *
      * @param parentElement   the element that contains the group/artifact/version/type
      * @param typeElementName name of the type element to be used
+     * @param configuration   scanner configuration
      *
      * @return a maven url
      *
      * @throws org.ops4j.pax.scanner.ScannerException
      *          if the element does not contain an artifact or group id
      */
-    private String composeURL( Element parentElement, String typeElementName )
+    private static String composeURL( final Element parentElement,
+                                      final String typeElementName,
+                                      final PomScannerConfiguration configuration )
         throws ScannerException
     {
         Element element = XmlUtils.getElement( parentElement, "artifactId" );
@@ -208,14 +209,13 @@ public class PomScanner
         {
             type = getTextContent( element );
         }
+        if( isNotAcceptedType( type, configuration ) )
+        {
+            return null;
+        }
         if( type != null && ( type.trim().length() == 0 || type.trim().equalsIgnoreCase( "bundle" ) ) )
         {
             type = null;
-        }
-        // deploy any artifact type (jar, war, etc.) except pom
-        if( type != null && type.equalsIgnoreCase( "pom" ) )
-        {
-            return null;
         }
         // verify scope
         element = XmlUtils.getElement( parentElement, "scope" );
@@ -245,7 +245,49 @@ public class PomScanner
         return builder.toString();
     }
 
-    private String getTextContent( Element element )
+    /**
+     * Verify if the specified type it is accepted as an artifact based on teh list of configured included/excluded.
+     *
+     * @param type          artifact type
+     * @param configuration configuration
+     *
+     * @return true, if the artyifact type should not be included
+     */
+    private static boolean isNotAcceptedType( final String type,
+                                              final PomScannerConfiguration configuration )
+    {
+        String localType = type;
+        if( localType == null )
+        {
+            localType = "jar";
+        }
+        final String[] excludedTypes = configuration.getDefaultExcludedTypes();
+        if( excludedTypes != null )
+        {
+            for( String excludedType : excludedTypes )
+            {
+                if( localType.matches( excludedType ) )
+                {
+                    return true;
+                }
+            }
+        }
+        final String[] includedTypes = configuration.getDefaultIncludedTypes();
+        if( includedTypes != null )
+        {
+            for( String includedType : includedTypes )
+            {
+                if( localType.matches( includedType ) )
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    private static String getTextContent( Element element )
     {
         String text = XmlUtils.getTextContent( element );
         if( text != null )
@@ -326,9 +368,9 @@ public class PomScanner
      *
      * @return a configuration
      */
-    ScannerConfiguration createConfiguration()
+    PomScannerConfiguration createConfiguration()
     {
-        return new ScannerConfigurationImpl( m_propertyResolver, ServiceConstants.PID );
+        return new PomScannerConfigurationImpl( m_propertyResolver );
     }
 
 }

@@ -35,4 +35,14 @@ public interface ServiceConstants
      */
     static final String SCHEMA = "scan-pom";
 
+    /**
+     * Default included packaging types property name.
+     */
+    static final String PROPERTY_DEFAULT_INCLUDED_TYPES = ".defaultIncludedTypes";
+
+    /**
+     * Default excluded packaging types property name.
+     */
+    static final String PROPERTY_DEFAULT_EXCLUDED_TYPES = ".defaultExcludedTypes";
+
 }

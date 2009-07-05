@@ -47,7 +47,7 @@ public class PomScannerTest
     public void scanWithInvalidFile()
         throws ScannerException, MalformedURLException
     {
-        ScannerConfiguration config = createMock( ScannerConfiguration.class );
+        PomScannerConfiguration config = createMock( PomScannerConfiguration.class );
 
         expect( config.getCertificateCheck() ).andReturn( false );
 
@@ -60,7 +60,7 @@ public class PomScannerTest
                       String pomFile )
         throws Exception
     {
-        ScannerConfiguration config = createMock( ScannerConfiguration.class );
+        PomScannerConfiguration config = createMock( PomScannerConfiguration.class );
         File file = FileUtils.getFileFromClasspath( pomFile );
 
         String spec = "scan-pom:" + file.toURL().toExternalForm();
@@ -89,6 +89,8 @@ public class PomScannerTest
             expect( config.shouldUpdate() ).andReturn( null );
         }
         expect( config.getCertificateCheck() ).andReturn( false );
+        expect( config.getDefaultExcludedTypes() ).andReturn( new String[]{ "pom", "libd" } ).anyTimes();
+        expect( config.getDefaultIncludedTypes() ).andReturn( new String[]{ ".*"} ).anyTimes();
 
         replay( config );
         List<ScannedBundle> scannedBundles = createPomScanner( config ).scan( new ProvisionSpec( spec ) );
@@ -236,12 +238,12 @@ public class PomScannerTest
         scan( expected, null, null, null, "scanner/pomWithPropertiesInDependency.xml" );
     }
 
-    private PomScanner createPomScanner( final ScannerConfiguration config )
+    private PomScanner createPomScanner( final PomScannerConfiguration config )
     {
         return new PomScanner( createMock( PropertyResolver.class ) )
         {
             @Override
-            ScannerConfiguration createConfiguration()
+            PomScannerConfiguration createConfiguration()
             {
                 return config;
             }
