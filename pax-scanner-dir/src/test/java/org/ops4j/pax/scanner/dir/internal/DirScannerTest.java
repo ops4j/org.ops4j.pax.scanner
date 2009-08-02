@@ -84,6 +84,26 @@ public class DirScannerTest
         verify( config );
     }
 
+    @Test
+    public void scanDirWithSpaces()
+        throws ScannerException, MalformedURLException, FileNotFoundException
+    {
+        ScannerConfiguration config = createMock( ScannerConfiguration.class );
+        File file = FileUtils.getFileFromClasspath( "dir with space" );
+
+        expect( config.getStartLevel() ).andReturn( null );
+        expect( config.shouldStart() ).andReturn( null );
+        expect( config.shouldUpdate() ).andReturn( null );
+
+        replay( config );
+        List<ScannedBundle> scannedBundles = createScanner( config ).scan(
+            new ProvisionSpec( "scan-dir:file:" + file.getAbsolutePath() + "!/*.jar" )
+        );
+        assertNotNull( "Returned list is null", scannedBundles );
+        assertEquals( "Number of bundles", 1, scannedBundles.size() );
+        verify( config );
+    }
+
     @Test( expected = MalformedSpecificationException.class )
     public void scanDirFromHttpURL()
         throws ScannerException, MalformedURLException

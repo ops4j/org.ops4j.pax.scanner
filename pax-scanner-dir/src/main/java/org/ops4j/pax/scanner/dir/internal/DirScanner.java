@@ -21,6 +21,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.JarURLConnection;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -105,7 +106,8 @@ public class DirScanner
         {
             try
             {
-                file = new File( url.toURI() );
+                final URI uri = new URI( url.toExternalForm().replaceAll( " ", "%20" ) );
+                file = new File( uri );
             }
             catch( URISyntaxException ignore )
             {
