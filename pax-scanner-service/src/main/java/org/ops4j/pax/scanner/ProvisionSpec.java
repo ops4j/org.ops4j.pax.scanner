@@ -340,7 +340,7 @@ public class ProvisionSpec
         }
         catch( Exception e )
         {
-            throw new MalformedSpecificationException( "Invalid characted used in the filter name", e );
+            throw new MalformedSpecificationException( "Invalid character used in the filter name", e );
         }
     }
 
