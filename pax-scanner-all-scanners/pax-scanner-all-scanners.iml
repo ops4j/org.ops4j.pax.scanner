@@ -19,6 +19,7 @@
     <orderEntry type="module" module-name="pax-scanner-composite" exported="" />
     <orderEntry type="library" exported="" name="Maven: org.ops4j.base:ops4j-base-net:1.1.0-SNAPSHOT" level="project" />
     <orderEntry type="module" module-name="pax-scanner-dir" exported="" />
+    <orderEntry type="library" exported="" name="Maven: org.ops4j.base:ops4j-base-io:1.1.0-SNAPSHOT" level="project" />
     <orderEntry type="module" module-name="pax-scanner-features" exported="" />
     <orderEntry type="module" module-name="pax-scanner-file" exported="" />
     <orderEntry type="module" module-name="pax-scanner-obr" exported="" />
