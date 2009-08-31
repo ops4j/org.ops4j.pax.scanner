@@ -30,6 +30,9 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipFile;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.ops4j.io.DirectoryLister;
+import org.ops4j.io.Lister;
+import org.ops4j.io.ZipLister;
 import org.ops4j.lang.NullArgumentException;
 import org.ops4j.pax.scanner.MalformedSpecificationException;
 import org.ops4j.pax.scanner.ProvisionSpec;
@@ -95,13 +98,13 @@ public class DirScanner
         {
             url = new URL( spec );
         }
-        catch( MalformedURLException ignore )
+        catch ( MalformedURLException ignore )
         {
             // ignore this as the spec may be resolved other way
             LOGGER.trace( "Specification is not a valid url: " + ignore.getMessage() + ". Continue discovery..." );
         }
         File file = null;
-        if( url != null && "file".equals( url.getProtocol() ) )
+        if ( url != null && "file".equals( url.getProtocol() ) )
         // if we have an url and it's a file url
         {
             try
@@ -109,7 +112,7 @@ public class DirScanner
                 final URI uri = new URI( url.toExternalForm().replaceAll( " ", "%20" ) );
                 file = new File( uri );
             }
-            catch( URISyntaxException ignore )
+            catch ( URISyntaxException ignore )
             {
                 // ignore this as the spec may be resolved other way
                 LOGGER.trace(
@@ -122,10 +125,10 @@ public class DirScanner
         {
             file = new File( spec );
         }
-        if( file != null && file.exists() )
+        if ( file != null && file.exists() )
         // if we have a directory
         {
-            if( file.isDirectory() )
+            if ( file.isDirectory() )
             {
                 try
                 {
@@ -136,7 +139,7 @@ public class DirScanner
                         defaultUpdate
                     );
                 }
-                catch( MalformedURLException e )
+                catch ( MalformedURLException e )
                 {
                     throw new MalformedSpecificationException( e );
                 }
@@ -155,18 +158,18 @@ public class DirScanner
         {
             ZipFile zip = null;
             URL baseUrl = null;
-            if( file != null && file.exists() )
+            if ( file != null && file.exists() )
             // try out a zip from the file we have
             {
                 zip = new ZipFile( file );
                 baseUrl = file.toURL();
             }
-            else if( url != null )
+            else if ( url != null )
             {
                 zip = new ZipFile( url.toExternalForm() );
                 baseUrl = url;
             }
-            if( zip != null && baseUrl != null )
+            if ( zip != null && baseUrl != null )
             {
                 try
                 {
@@ -175,19 +178,19 @@ public class DirScanner
                         defaultStartLevel, defaultStart, defaultUpdate
                     );
                 }
-                catch( MalformedURLException e )
+                catch ( MalformedURLException e )
                 {
                     throw new MalformedSpecificationException( e );
                 }
             }
         }
-        catch( IOException ignore )
+        catch ( IOException ignore )
         {
             // ignore for the moment
             LOGGER.trace( "Specification is not a valid zip: " + ignore.getMessage() + "Continue discovery..." );
         }
         // finaly try with a zip protocol
-        if( url != null && !url.toExternalForm().startsWith( "jar" ) )
+        if ( url != null && !url.toExternalForm().startsWith( "jar" ) )
         {
             try
             {
@@ -198,7 +201,7 @@ public class DirScanner
                     defaultStartLevel, defaultStart, defaultUpdate
                 );
             }
-            catch( Exception ignore )
+            catch ( Exception ignore )
             {
                 LOGGER.trace( "Specification is not a valid jar: " + ignore.getMessage() );
             }
@@ -221,15 +224,17 @@ public class DirScanner
      *
      * @throws java.net.MalformedURLException re-thrown
      */
-    private List<ScannedBundle> list( final Lister lister, final Integer startLevel, final Boolean shouldStart,
+    private List<ScannedBundle> list( final Lister lister,
+                                      final Integer startLevel,
+                                      final Boolean shouldStart,
                                       final Boolean update )
         throws MalformedURLException
     {
         final List<ScannedBundle> scannedBundles = new ArrayList<ScannedBundle>();
         final List<URL> urls = lister.list();
-        if( urls != null )
+        if ( urls != null )
         {
-            for( URL url : urls )
+            for ( URL url : urls )
             {
                 final ScannedFileBundle scannedFileBundle = new ScannedFileBundle(
                     url.toExternalForm(), startLevel, shouldStart, update
@@ -252,7 +257,7 @@ public class DirScanner
     private Integer getDefaultStartLevel( ProvisionSpec provisionSpec, ScannerConfiguration config )
     {
         Integer startLevel = provisionSpec.getStartLevel();
-        if( startLevel == null )
+        if ( startLevel == null )
         {
             startLevel = config.getStartLevel();
         }
@@ -270,7 +275,7 @@ public class DirScanner
     private Boolean getDefaultStart( final ProvisionSpec provisionSpec, final ScannerConfiguration config )
     {
         Boolean start = provisionSpec.shouldStart();
-        if( start == null )
+        if ( start == null )
         {
             start = config.shouldStart();
         }
@@ -288,7 +293,7 @@ public class DirScanner
     private Boolean getDefaultUpdate( final ProvisionSpec provisionSpec, final ScannerConfiguration config )
     {
         Boolean update = provisionSpec.shouldUpdate();
-        if( update == null )
+        if ( update == null )
         {
             update = config.shouldUpdate();
         }
