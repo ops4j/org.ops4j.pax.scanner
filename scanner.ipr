@@ -140,16 +140,38 @@
     <option name="MAXIMUM_HEAP_SIZE" value="128" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="FacetAutodetectingManager">
+    <autodetection-disabled>
+      <facet-type id="Osmorc">
+        <modules>
+          <module name="pax-scanner-service" />
+          <module name="pax-scanner-bundle" />
+          <module name="pax-scanner-obr" />
+          <module name="pax-scanner-composite" />
+          <module name="pax-scanner-dir" />
+          <module name="pax-scanner-features" />
+          <module name="pax-scanner-file" />
+          <module name="pax-scanner-maven" />
+          <module name="pax-scanner-pom" />
+          <module name="pax-scanner-obr-script" />
+        </modules>
+      </facet-type>
+    </autodetection-disabled>
+  </component>
   <component name="IdProvider" IDEtalkID="D5A4F799038F677522BCF3541D1F3620" />
   <component name="InspectionProjectProfileManager">
     <option name="PROJECT_PROFILE" value="Project Default" />
-    <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
-    <scopes />
+    <option name="USE_PROJECT_PROFILE" value="true" />
+    <version value="1.0" />
     <profiles>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Project Default" />
         <option name="myLocal" value="false" />
-        <inspection_tool class="UNUSED_SYMBOL" level="WARNING" enabled="true">
+        <inspection_tool class="IgnoreResultOfCall" enabled="false" level="WARNING" enabled_by_default="false">
+          <option name="m_reportAllNonLibraryCalls" value="false" />
+          <option name="callCheckString" value="java.io.InputStream,read,java.io.InputStream,skip,java.lang.StringBuffer,toString,java.lang.StringBuilder,toString,java.lang.String,.*,java.math.BigInteger,.*,java.math.BigDecimal,.*,java.net.InetAddress,.*,java.io.File,.*,java.lang.Object,equals|hashCode" />
+        </inspection_tool>
+        <inspection_tool class="UNUSED_SYMBOL" enabled="true" level="WARNING" enabled_by_default="true">
           <option name="LOCAL_VARIABLE" value="true" />
           <option name="FIELD" value="true" />
           <option name="METHOD" value="true" />
@@ -165,10 +187,6 @@
               </list>
             </value>
           </option>
-        </inspection_tool>
-        <inspection_tool class="IgnoreResultOfCall" level="WARNING" enabled="false">
-          <option name="m_reportAllNonLibraryCalls" value="false" />
-          <option name="callCheckString" value="java.io.InputStream,read,java.io.InputStream,skip,java.lang.StringBuffer,toString,java.lang.StringBuilder,toString,java.lang.String,.*,java.math.BigInteger,.*,java.math.BigDecimal,.*,java.net.InetAddress,.*,java.io.File,.*,java.lang.Object,equals|hashCode" />
         </inspection_tool>
       </profile>
     </profiles>
@@ -221,6 +239,13 @@
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="scanner" />
+  </component>
+  <component name="ProjectDictionaryState">
+    <dictionary name="adreghiciu">
+      <words>
+        <w>urls</w>
+      </words>
+    </dictionary>
   </component>
   <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectKey">
@@ -304,28 +329,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/easymock/easymock/2.3/easymock-2.3-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.ops4j.base:ops4j-base-lang:1.0.0">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-lang/1.0.0/ops4j-base-lang-1.0.0.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-lang/1.0.0/ops4j-base-lang-1.0.0-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-lang/1.0.0/ops4j-base-lang-1.0.0-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.ops4j.base:ops4j-base-util-property:1.0.0">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-util-property/1.0.0/ops4j-base-util-property-1.0.0.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-util-property/1.0.0/ops4j-base-util-property-1.0.0-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-util-property/1.0.0/ops4j-base-util-property-1.0.0-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: org.ops4j.pax.swissbox:pax-swissbox-optional-jcl:1.0.0">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/swissbox/pax-swissbox-optional-jcl/1.0.0/pax-swissbox-optional-jcl-1.0.0.jar!/" />
@@ -348,26 +351,26 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/swissbox/pax-swissbox-property/1.0.0/pax-swissbox-property-1.0.0-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.ops4j.base:ops4j-base-io:1.0.0">
+    <library name="Maven: org.ops4j.base:ops4j-base-lang:1.0.0">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-io/1.0.0/ops4j-base-io-1.0.0.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-lang/1.0.0/ops4j-base-lang-1.0.0.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-io/1.0.0/ops4j-base-io-1.0.0-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-lang/1.0.0/ops4j-base-lang-1.0.0-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-io/1.0.0/ops4j-base-io-1.0.0-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-lang/1.0.0/ops4j-base-lang-1.0.0-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.ops4j.base:ops4j-base-monitors:1.0.0">
+    <library name="Maven: org.ops4j.base:ops4j-base-util-property:1.0.0">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-monitors/1.0.0/ops4j-base-monitors-1.0.0.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-util-property/1.0.0/ops4j-base-util-property-1.0.0.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-monitors/1.0.0/ops4j-base-monitors-1.0.0-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-util-property/1.0.0/ops4j-base-util-property-1.0.0-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-monitors/1.0.0/ops4j-base-monitors-1.0.0-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-util-property/1.0.0/ops4j-base-util-property-1.0.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.ops4j.base:ops4j-base-net:1.0.0">
@@ -381,48 +384,15 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-net/1.0.0/ops4j-base-net-1.0.0-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.ops4j.base:ops4j-base-util-xml:1.0.0">
+    <library name="Maven: org.ops4j.base:ops4j-base-monitors:1.0.0">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-util-xml/1.0.0/ops4j-base-util-xml-1.0.0.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-monitors/1.0.0/ops4j-base-monitors-1.0.0.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-util-xml/1.0.0/ops4j-base-util-xml-1.0.0-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-monitors/1.0.0/ops4j-base-monitors-1.0.0-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-util-xml/1.0.0/ops4j-base-util-xml-1.0.0-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.ops4j.base:ops4j-base-util-collections:1.0.0">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-util-collections/1.0.0/ops4j-base-util-collections-1.0.0.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-util-collections/1.0.0/ops4j-base-util-collections-1.0.0-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-util-collections/1.0.0/ops4j-base-util-collections-1.0.0-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.ops4j.pax.url:pax-url-maven-commons:1.0.0">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/url/pax-url-maven-commons/1.0.0/pax-url-maven-commons-1.0.0.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/url/pax-url-maven-commons/1.0.0/pax-url-maven-commons-1.0.0-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/url/pax-url-maven-commons/1.0.0/pax-url-maven-commons-1.0.0-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.ops4j.pax.url:pax-url-mercury:1.0.0">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/url/pax-url-mercury/1.0.0/pax-url-mercury-1.0.0.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/url/pax-url-mercury/1.0.0/pax-url-mercury-1.0.0-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/url/pax-url-mercury/1.0.0/pax-url-mercury-1.0.0-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-monitors/1.0.0/ops4j-base-monitors-1.0.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.ops4j.pax.swissbox:pax-swissbox-tracker:1.0.0">
@@ -467,6 +437,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.osgi.core/1.0.0/org.osgi.core-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.ops4j.base:ops4j-base-io:1.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-io/1.0.0/ops4j-base-io-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-io/1.0.0/ops4j-base-io-1.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-io/1.0.0/ops4j-base-io-1.0.0-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: org.apache.servicemix.kernel.gshell:org.apache.servicemix.kernel.gshell.features:1.1.0">
@@ -775,6 +756,50 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.osgi.core/1.2.0/org.osgi.core-1.2.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.ops4j.pax.url:pax-url-maven-commons:1.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/url/pax-url-maven-commons/1.0.0/pax-url-maven-commons-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/url/pax-url-maven-commons/1.0.0/pax-url-maven-commons-1.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/url/pax-url-maven-commons/1.0.0/pax-url-maven-commons-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.ops4j.base:ops4j-base-util-xml:1.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-util-xml/1.0.0/ops4j-base-util-xml-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-util-xml/1.0.0/ops4j-base-util-xml-1.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-util-xml/1.0.0/ops4j-base-util-xml-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.ops4j.base:ops4j-base-util-collections:1.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-util-collections/1.0.0/ops4j-base-util-collections-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-util-collections/1.0.0/ops4j-base-util-collections-1.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/base/ops4j-base-util-collections/1.0.0/ops4j-base-util-collections-1.0.0-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.ops4j.pax.url:pax-url-mercury:1.0.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/url/pax-url-mercury/1.0.0/pax-url-mercury-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/url/pax-url-mercury/1.0.0/pax-url-mercury-1.0.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/url/pax-url-mercury/1.0.0/pax-url-mercury-1.0.0-sources.jar!/" />
       </SOURCES>
     </library>
   </component>
