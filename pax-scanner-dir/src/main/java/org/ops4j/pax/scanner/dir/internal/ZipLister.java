@@ -24,7 +24,7 @@ public class ZipLister
      */
     private URL m_baseURL;
     /**
-     * The root zip entties to be listed.
+     * The root zip entries to be listed.
      */
     private final Enumeration<? extends ZipEntry> m_zipEntries;
     /**

@@ -95,7 +95,7 @@ public class DirectoryLister
      * @param dir        the directory to list
      * @param parentName name of the parent; to be used in construction the relative path of the returned files
      *
-     * @return a list foi files from the dir and any subfolders
+     * @return a list foi files from the dir and any sub-folders
      */
     private List<String> listFiles( final File dir, final String parentName )
     {

@@ -22,7 +22,7 @@ import java.net.URL;
 import java.util.List;
 
 /**
- * List urls from different sources. Implementatiosn mat list urls from file directory or zip files.
+ * List urls from different sources. Implementations mat list urls from file directory or zip files.
  *
  * @author Alin Dreghiciu
  * @since September 04, 2007
