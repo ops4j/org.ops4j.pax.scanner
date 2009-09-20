@@ -32,33 +32,12 @@
     <connection>scm:svn:https://scm.ops4j.org/repos/ops4j/projects/pax/scanner</connection>
     <developerConnection>scm:svn:https://scm.ops4j.org/repos/ops4j/projects/pax/scanner</developerConnection>
   </scm>
-  <profiles>
-    <profile>
-      <id>release</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <modules>
-        <module>pax-scanner-service</module>
-        <module>pax-scanner-common</module>
-        <module>pax-scanner-composite</module>
-        <module>pax-scanner-bundle</module>
-        <module>pax-scanner-dir</module>
-        <module>pax-scanner-features</module>
-        <module>pax-scanner-file</module>
-        <module>pax-scanner-obr</module>
-        <module>pax-scanner-obr-script</module>
-        <module>pax-scanner-pom</module>
-        <module>pax-scanner-all-scanners</module>
-      </modules>
-    </profile>
-    <profile>
-      <id>non-releaseable</id>
-      <modules>
-        <module>pax-scanner-maven</module>
-      </modules>
-    </profile>
-  </profiles>
+
+  <properties>
+    <dependency.base.version>1.1.0-SNAPSHOT</dependency.base.version>
+    <dependency.swissbox.version>1.0.0</dependency.swissbox.version>
+    <dependency.url.version>1.0.0</dependency.url.version>
+  </properties>  
 
   <developers>
     <developer>
@@ -71,12 +50,6 @@
       <timezone>UTC+2</timezone>
     </developer>
   </developers>
-
-  <properties>
-    <dependency.base.version>1.1.0-SNAPSHOT</dependency.base.version>
-    <dependency.swissbox.version>1.0.0</dependency.swissbox.version>
-    <dependency.url.version>1.0.0</dependency.url.version>
-  </properties>
 
   <build>
     <plugins>
@@ -265,5 +238,33 @@
       <artifactId>easymock</artifactId>
     </dependency>
   </dependencies>
+
+  <profiles>
+    <profile>
+      <id>release</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <modules>
+        <module>pax-scanner-service</module>
+        <module>pax-scanner-common</module>
+        <module>pax-scanner-composite</module>
+        <module>pax-scanner-bundle</module>
+        <module>pax-scanner-dir</module>
+        <module>pax-scanner-features</module>
+        <module>pax-scanner-file</module>
+        <module>pax-scanner-obr</module>
+        <module>pax-scanner-obr-script</module>
+        <module>pax-scanner-pom</module>
+        <module>pax-scanner-all-scanners</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>non-releaseable</id>
+      <modules>
+        <module>pax-scanner-maven</module>
+      </modules>
+    </profile>
+  </profiles>  
 
 </project>
