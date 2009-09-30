@@ -46,6 +46,7 @@ public class CompositeActivator
         m_activators.add( new org.ops4j.pax.scanner.internal.Activator() );
         m_activators.add( new org.ops4j.pax.scanner.bundle.internal.Activator() );
         m_activators.add( new org.ops4j.pax.scanner.composite.internal.Activator() );
+        m_activators.add( new org.ops4j.pax.scanner.dir.internal.Activator() );
         m_activators.add( new org.ops4j.pax.scanner.features.internal.Activator() );
         m_activators.add( new org.ops4j.pax.scanner.file.internal.Activator() );
         m_activators.add( new org.ops4j.pax.scanner.obr.internal.Activator() );
