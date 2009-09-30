@@ -1,0 +1,54 @@
+Bundle-SymbolicName:\
+  ${bundle.symbolicName}
+
+Bundle-Version>:\
+  ${pom.version}
+
+Bundle-Activator:\
+  ${bundle.namespace}.all.internal.CompositeActivator
+
+Import-Package:\
+  ${bundle.namespace}; version="${pom.version}",\
+  ${bundle.namespace}.bundle; version="${pom.version}",\
+  ${bundle.namespace}.composite; version="${pom.version}",\
+  ${bundle.namespace}.dir; version="${pom.version}",\
+  ${bundle.namespace}.features; version="${pom.version}",\
+  ${bundle.namespace}.file; version="${pom.version}",\
+  ${bundle.namespace}.obr; version="${pom.version}",\
+  ${bundle.namespace}.pom; version="${pom.version}",\
+  org.apache.commons.logging; version="[1.0.4,2.0.0)"; resolution:=optional,\
+  javax.net.ssl,\
+  javax.xml.parsers,\
+  org.osgi.framework; version="[1.0.0,2.0.0)",\
+  org.osgi.service.cm; version="[1.2.0,2.0.0)",\
+  org.osgi.service.prefs; version="[1.0.0,2.0.0)",\
+  org.osgi.service.startlevel; version="[1.0.0,2.0.0)",\
+  org.osgi.util.tracker; version="[1.3.0,2.0.0)",\
+  org.w3c.dom,\
+  org.xml.sax,\
+  !org.apache.servicemix.kernel.filemonitor,\
+  !org.springframework*
+
+Export-Package:\
+  ${bundle.namespace}; version="${pom.version}",\
+  ${bundle.namespace}.bundle; version="${pom.version}",\
+  ${bundle.namespace}.composite; version="${pom.version}",\
+  ${bundle.namespace}.dir; version="${pom.version}",\
+  ${bundle.namespace}.features; version="${pom.version}",\
+  ${bundle.namespace}.file; version="${pom.version}",\
+  ${bundle.namespace}.obr; version="${pom.version}",\
+  ${bundle.namespace}.pom; version="${pom.version}"
+
+Private-Package:\
+  ${bundle.namespace}.all.internal.*
+
+Embed-Dependency:\
+  *; scope=compile; type=!pom; inline=true
+
+Embed-Transitive: true
+
+-removeheaders:\
+  Include-Resource,\
+  Private-Package,\
+  Embed-Dependency,\
+  Embed-Transitive

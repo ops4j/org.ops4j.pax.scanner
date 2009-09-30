@@ -254,6 +254,7 @@
         <module>pax-scanner-obr-script</module>
         <module>pax-scanner-pom</module>
         <module>pax-scanner-all-scanners</module>
+        <module>pax-scanner-all-scanners-bundle</module>
       </modules>
     </profile>
     <profile>
