@@ -252,6 +252,7 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/pax-scanner-all/pax-scanner-all.iml" filepath="$PROJECT_DIR$/pax-scanner-all/pax-scanner-all.iml" />
       <module fileurl="file://$PROJECT_DIR$/pax-scanner-all-scanners/pax-scanner-all-scanners.iml" filepath="$PROJECT_DIR$/pax-scanner-all-scanners/pax-scanner-all-scanners.iml" />
       <module fileurl="file://$PROJECT_DIR$/pax-scanner-all-scanners-bundle/pax-scanner-all-scanners-bundle.iml" filepath="$PROJECT_DIR$/pax-scanner-all-scanners-bundle/pax-scanner-all-scanners-bundle.iml" />
       <module fileurl="file://$PROJECT_DIR$/pax-scanner-bundle/pax-scanner-bundle.iml" filepath="$PROJECT_DIR$/pax-scanner-bundle/pax-scanner-bundle.iml" />
@@ -940,17 +941,6 @@
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/pax-scanner-pom/pom-sources.jar!/" />
         <root url="jar://$PROJECT_DIR$/pax-scanner-pom/pom-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.ops4j.pax.scanner:pax-scanner-service:1.1.0-SNAPSHOT">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/scanner/pax-scanner-service/1.1.0-SNAPSHOT/pax-scanner-service-1.1.0-SNAPSHOT.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/scanner/pax-scanner-service/1.1.0-SNAPSHOT/pax-scanner-service-1.1.0-SNAPSHOT-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/scanner/pax-scanner-service/1.1.0-SNAPSHOT/pax-scanner-service-1.1.0-SNAPSHOT-sources.jar!/" />
       </SOURCES>
     </library>
   </component>
