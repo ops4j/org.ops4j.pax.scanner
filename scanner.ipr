@@ -815,6 +815,144 @@
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/felix/org.osgi.core/1.2.0/org.osgi.core-1.2.0-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: org.ops4j.pax.scanner:pax-scanner-common:1.0.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom.xml!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-common/pom-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.ops4j.pax.scanner:pax-scanner-bundle:1.0.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-bundle/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-bundle/pom.xml!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-bundle/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-bundle/pom-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-bundle/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-bundle/pom-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.ops4j.pax.scanner:pax-scanner-composite:1.0.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-composite/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-composite/pom.xml!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-composite/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-composite/pom-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-composite/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-composite/pom-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.ops4j.pax.scanner:pax-scanner-dir:1.0.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-dir/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-dir/pom.xml!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-dir/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-dir/pom-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-dir/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-dir/pom-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.ops4j.pax.scanner:pax-scanner-features:1.0.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-features/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-features/pom.xml!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-features/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-features/pom-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-features/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-features/pom-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.ops4j.pax.scanner:pax-scanner-file:1.0.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-file/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-file/pom.xml!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-file/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-file/pom-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-file/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-file/pom-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.ops4j.pax.scanner:pax-scanner-obr:1.0.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-obr/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-obr/pom.xml!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-obr/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-obr/pom-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-obr/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-obr/pom-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.ops4j.pax.scanner:pax-scanner-pom:1.0.1-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-pom/pom.xml!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-pom/pom.xml!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-pom/pom-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-pom/pom-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/pax-scanner-pom/pom-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/pax-scanner-pom/pom-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.ops4j.pax.scanner:pax-scanner-service:1.1.0-SNAPSHOT">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/scanner/pax-scanner-service/1.1.0-SNAPSHOT/pax-scanner-service-1.1.0-SNAPSHOT.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/scanner/pax-scanner-service/1.1.0-SNAPSHOT/pax-scanner-service-1.1.0-SNAPSHOT-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/ops4j/pax/scanner/pax-scanner-service/1.1.0-SNAPSHOT/pax-scanner-service-1.1.0-SNAPSHOT-sources.jar!/" />
+      </SOURCES>
+    </library>
   </component>
   <UsedPathMacros>
     <macro name="MAVEN_REPOSITORY" description="Maven Local Repostiry" />

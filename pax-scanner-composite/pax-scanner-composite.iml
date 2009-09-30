@@ -16,7 +16,7 @@
     <orderEntry type="library" exported="" name="Maven: org.ops4j.base:ops4j-base-monitors:1.2.1" level="project" />
     <orderEntry type="library" exported="" name="Maven: org.ops4j.base:ops4j-base-util-property:1.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.ops4j.pax.swissbox:pax-swissbox-optional-jcl:1.2.0" level="project" />
-    <orderEntry type="module" module-name="pax-scanner-common" />
+    <orderEntry type="library" name="Maven: org.ops4j.pax.scanner:pax-scanner-common:1.0.1-SNAPSHOT" level="project" />
     <orderEntry type="library" exported="" name="Maven: org.ops4j.pax.swissbox:pax-swissbox-property:1.2.0" level="project" />
     <orderEntry type="module" module-name="pax-scanner-service" scope="PROVIDED" />
     <orderEntry type="library" scope="TEST" name="Maven: org.ops4j.base:ops4j-base-io:1.2.1" level="project" />

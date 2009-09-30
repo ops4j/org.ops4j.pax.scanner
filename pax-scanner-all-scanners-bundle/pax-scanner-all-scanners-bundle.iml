@@ -9,12 +9,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="pax-scanner-service" />
-    <orderEntry type="library" exported="" name="Maven: org.ops4j.pax.swissbox:pax-swissbox-property:1.2.0" level="project" />
-    <orderEntry type="library" exported="" name="Maven: org.ops4j.base:ops4j-base-lang:1.2.1" level="project" />
-    <orderEntry type="library" exported="" name="Maven: org.ops4j.base:ops4j-base-util-property:1.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.ops4j.pax.scanner:pax-scanner-service:1.1.0-SNAPSHOT" level="project" />
     <orderEntry type="module" module-name="pax-scanner-all-scanners" />
     <orderEntry type="module" module-name="pax-scanner-bundle" exported="" />
+    <orderEntry type="library" exported="" name="Maven: org.ops4j.base:ops4j-base-lang:1.2.1" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.ops4j.base:ops4j-base-util-property:1.2.1" level="project" />
     <orderEntry type="module" module-name="pax-scanner-composite" exported="" />
     <orderEntry type="library" exported="" name="Maven: org.ops4j.base:ops4j-base-net:1.2.1" level="project" />
     <orderEntry type="library" exported="" name="Maven: org.ops4j.base:ops4j-base-monitors:1.2.1" level="project" />
