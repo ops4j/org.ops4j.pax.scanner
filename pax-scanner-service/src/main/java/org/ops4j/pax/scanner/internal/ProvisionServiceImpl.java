@@ -19,6 +19,7 @@ package org.ops4j.pax.scanner.internal;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import org.apache.commons.logging.Log;
@@ -186,11 +187,14 @@ public class ProvisionServiceImpl
         NullArgumentException.validateNotNull( scanner, "Scanner" );
         synchronized( m_scanners )
         {
-            for( Map.Entry<String, Scanner> entry : m_scanners.entrySet() )
+            final Iterator<Map.Entry<String, Scanner>> it = m_scanners.entrySet().iterator();
+            
+            while( it.hasNext() )
             {
+                Map.Entry<String, Scanner> entry = it.next();
                 if( scanner == entry.getValue() )
                 {
-                    m_scanners.remove( entry.getKey() );
+                    it.remove();
                     LOGGER.debug( "Removed scheme [" + entry.getKey() + "] scanner [" + scanner + "]" );
                 }
             }
