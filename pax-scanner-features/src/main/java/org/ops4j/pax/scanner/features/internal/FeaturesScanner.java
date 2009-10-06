@@ -155,7 +155,7 @@ public class FeaturesScanner
         catch( Exception e )
         {
             throw new ScannerException(
-                "Cannot find a feature named '" + featureName + "' with version '" + featureVersion + "'", e
+                "Cannot load the feature named '" + featureName + "' with version '" + featureVersion + "'", e
             );
         }
     }
