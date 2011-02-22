@@ -1,5 +1,6 @@
 /*
  * Copyright 2009 Alin Dreghiciu.
+ * Copyright 2011 Andreas Pieber
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +20,8 @@ package org.ops4j.pax.scanner.features.internal;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import org.apache.servicemix.kernel.gshell.features.internal.FeatureImpl;
+
+import org.apache.karaf.features.internal.FeatureImpl;
 import org.ops4j.lang.NullArgumentException;
 import org.ops4j.pax.scanner.ProvisionSpec;
 import org.ops4j.pax.scanner.ScannerException;
@@ -27,12 +29,11 @@ import org.ops4j.pax.scanner.features.ServiceConstants;
 
 /**
  * Feature filter.
- *
- * @author Alin Dreghiciu (adreghiciu@gmail.com)
+ * 
+ * @author Alin Dreghiciu (adreghiciu@gmail.com), Andreas Pieber
  * @since 0.18.0, March 07, 2009
  */
-class FeaturesFilter
-{
+class FeaturesFilter {
 
     /**
      * Feature name. Cannot be null or empty.
@@ -48,31 +49,26 @@ class FeaturesFilter
      *
      * @param name feature name
      */
-    FeaturesFilter( final String name )
-    {
-        this( name, null );
+    FeaturesFilter(final String name) {
+        this(name, null);
     }
 
     /**
      * Constructor.
      *
-     * @param name    feature name; cannot be null or empty
+     * @param name feature name; cannot be null or empty
      * @param version feature name; can be null or empty case when an default version will be used
      *
      * @throws IllegalArgumentException - if feature name is null or empty
      */
-    FeaturesFilter( final String name,
-                    final String version )
-    {
-        NullArgumentException.validateNotEmpty( name, true, "Feature name" );
+    FeaturesFilter(final String name,
+                    final String version) {
+        NullArgumentException.validateNotEmpty(name, true, "Feature name");
 
         m_name = name;
-        if( version == null || version.trim().length() == 0 )
-        {
+        if (version == null || version.trim().length() == 0) {
             m_version = FeatureImpl.DEFAULT_VERSION;
-        }
-        else
-        {
+        } else {
             m_version = version;
         }
     }
@@ -82,8 +78,7 @@ class FeaturesFilter
      *
      * @return feature name
      */
-    String getName()
-    {
+    String getName() {
         return m_name;
     }
 
@@ -92,8 +87,7 @@ class FeaturesFilter
      *
      * @return feature version
      */
-    String getVersion()
-    {
+    String getVersion() {
         return m_version;
     }
 
@@ -106,26 +100,20 @@ class FeaturesFilter
      *
      * @throws ScannerException - If there is no filter in provisioning spec (no !/)
      */
-    static Collection<FeaturesFilter> fromProvisionSpec( final ProvisionSpec provisionSpec )
-        throws ScannerException
-    {
+    static Collection<FeaturesFilter> fromProvisionSpec(final ProvisionSpec provisionSpec)
+        throws ScannerException {
         final String rawFeatures = provisionSpec.getFilter();
-        if( rawFeatures == null || rawFeatures.length() == 0 )
-        {
-            throw new ScannerException( "Feature names are mandatory (use !/)" );
+        if (rawFeatures == null || rawFeatures.length() == 0) {
+            throw new ScannerException("Feature names are mandatory (use !/)");
         }
         final Collection<FeaturesFilter> filters = new ArrayList<FeaturesFilter>();
-        final String[] features = rawFeatures.split( ServiceConstants.FEATURE_SEPARATOR );
-        for( String feature : features )
-        {
-            final String[] segments = feature.split( "/" );
-            if( segments.length > 1 )
-            {
-                filters.add( new FeaturesFilter( segments[ 0 ], segments[ 1 ] ) );
-            }
-            else
-            {
-                filters.add( new FeaturesFilter( segments[ 0 ] ) );
+        final String[] features = rawFeatures.split(ServiceConstants.FEATURE_SEPARATOR);
+        for (String feature : features) {
+            final String[] segments = feature.split("/");
+            if (segments.length > 1) {
+                filters.add(new FeaturesFilter(segments[0], segments[1]));
+            } else {
+                filters.add(new FeaturesFilter(segments[0]));
             }
         }
         return filters;

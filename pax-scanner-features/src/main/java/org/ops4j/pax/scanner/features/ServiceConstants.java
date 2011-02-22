@@ -1,5 +1,6 @@
 /*
  * Copyright 2009 Alin Dreghiciu.
+ * Copyright 2011 Andreas Pieber
  *
  * Licensed  under the  Apache License,  Version 2.0  (the "License");
  * you may not use  this file  except in  compliance with the License.
@@ -20,11 +21,10 @@ package org.ops4j.pax.scanner.features;
 /**
  * An enumeration of constants related to features scanner.
  *
- * @author Alin Dreghiciu
+ * @author Alin Dreghiciu, Andreas Pieber
  * @since 0.18.0, April 01, 2009
  */
-public interface ServiceConstants
-{
+public interface ServiceConstants {
 
     /**
      * Service PID used for configuration.

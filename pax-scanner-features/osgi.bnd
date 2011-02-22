@@ -15,20 +15,18 @@ Import-Package:\
   org.osgi.framework; version="[1.0.0,2.0.0)",\
   org.osgi.service.cm; version="[1.2.0,2.0.0)",\
   org.osgi.service.prefs,\
-  org.ops4j.pax.scanner; version="${pom.version}",\
+  org.ops4j.pax.scanner; version="${pom.version}"; resolution:=optional,\
   org.w3c.dom,\
   org.xml.sax,\
-  !org.apache.servicemix.kernel.filemonitor,\
-  !org.springframework*
+  *;resolution:=optional
 
 Export-Package:\
   ${bundle.namespace}; version="${pom.version}"
 
 Private-Package:\
   ${bundle.namespace}.internal.*,\
-  org.apache.servicemix.kernel.gshell.features,\
-  org.apache.servicemix.kernel.gshell.features.internal,\
-  org.springframework.osgi.context
+  org.apache.karaf.features,\
+  org.apache.karaf.features.internal,\
 
 Embed-Dependency:\
   *; scope=compile; type=!pom; inline=true

@@ -1,5 +1,6 @@
 /*
  * Copyright 2009 Alin Dreghiciu.
+ * Copyright 2011 Andreas Pieber
  *
  * Licensed  under the  Apache License,  Version 2.0  (the "License");
  * you may not use  this file  except in  compliance with the License.
@@ -17,37 +18,33 @@
  */
 package org.ops4j.pax.scanner.features.internal;
 
-import org.osgi.framework.BundleContext;
 import org.ops4j.pax.scanner.common.AbstractScannerActivator;
 import org.ops4j.pax.scanner.features.ServiceConstants;
 import org.ops4j.pax.swissbox.property.BundleContextPropertyResolver;
 import org.ops4j.util.property.PropertyResolver;
+import org.osgi.framework.BundleContext;
 
 /**
  * Bundle activator for feature scanner.
  *
- * @author Alin Dreghiciu
+ * @author Alin Dreghiciu, Andreas Pieber
  * @since 0.18.0, April 01, 2009
  */
-public final class Activator
-    extends AbstractScannerActivator<FeaturesScanner>
-{
+public final class Activator extends AbstractScannerActivator<FeaturesScanner> {
 
     /**
      * {@inheritDoc}
      */
     @Override
-    protected FeaturesScanner createScanner( final BundleContext bundleContext )
-    {
-        return new FeaturesScanner( new BundleContextPropertyResolver( bundleContext ) );
+    protected FeaturesScanner createScanner(final BundleContext bundleContext) {
+        return new FeaturesScanner(new BundleContextPropertyResolver(bundleContext));
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    protected String getPID()
-    {
+    protected String getPID() {
         return ServiceConstants.PID;
     }
 
@@ -55,8 +52,7 @@ public final class Activator
      * {@inheritDoc}
      */
     @Override
-    protected String getSchema()
-    {
+    protected String getSchema() {
         return ServiceConstants.SCHEMA;
     }
 
@@ -64,9 +60,8 @@ public final class Activator
      * {@inheritDoc}
      */
     @Override
-    protected void setResolver( final PropertyResolver propertyResolver )
-    {
-        getScanner().setResolver( propertyResolver );
+    protected void setResolver(final PropertyResolver propertyResolver) {
+        getScanner().setResolver(propertyResolver);
     }
 
 }

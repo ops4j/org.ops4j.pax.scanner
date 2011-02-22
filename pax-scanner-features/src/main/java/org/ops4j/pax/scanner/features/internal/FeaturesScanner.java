@@ -1,5 +1,6 @@
 /*
  * Copyright 2009 Alin Dreghiciu.
+ * Copyright 2011 Andreas Pieber
  *
  * Licensed  under the  Apache License,  Version 2.0  (the "License");
  * you may not use  this file  except in  compliance with the License.
@@ -19,9 +20,12 @@ package org.ops4j.pax.scanner.features.internal;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.servicemix.kernel.gshell.features.Feature;
+import org.apache.karaf.features.BundleInfo;
+import org.apache.karaf.features.Feature;
+import org.apache.karaf.features.FeaturesService;
 import org.ops4j.lang.NullArgumentException;
 import org.ops4j.pax.scanner.ProvisionSpec;
 import org.ops4j.pax.scanner.ScannedBundle;
@@ -36,69 +40,64 @@ import org.ops4j.util.property.PropertyResolver;
 /**
  * A scanner that scans Apache ServiceMix Kernel features files (xml).
  *
- * @author Alin Dreghiciu
+ * @author Alin Dreghiciu, Andreas Pieber
  * @since 0.18.0, April 01, 2007
  */
-public class FeaturesScanner
-    implements Scanner
-{
+public class FeaturesScanner implements Scanner {
 
     /**
      * Logger.
      */
-    private static final Log LOGGER = LogFactory.getLog( FeaturesScanner.class );
+    private static final Log LOGGER = LogFactory.getLog(FeaturesScanner.class);
     /**
      * PropertyResolver used to resolve properties.
      */
     private PropertyResolver m_propertyResolver;
+    /**
+     * Since all feature files in a system are scanned a singleton feature service should be used.
+     */
+    private final FeaturesService m_featuresService;
 
     /**
      * Creates a new file scanner.
      *
      * @param propertyResolver a propertyResolver; mandatory
      */
-    public FeaturesScanner( final PropertyResolver propertyResolver )
-    {
-        NullArgumentException.validateNotNull( propertyResolver, "PropertyResolver" );
+    public FeaturesScanner(final PropertyResolver propertyResolver) {
+        NullArgumentException.validateNotNull(propertyResolver, "PropertyResolver");
         m_propertyResolver = propertyResolver;
+        m_featuresService = new FeatureServiceWrapper();
     }
 
     /**
-     * Reads the bundles from the file specified by the urlSpec.
-     * {@inheritDoc}
+     * Reads the bundles from the file specified by the urlSpec. {@inheritDoc}
      */
-    public List<ScannedBundle> scan( final ProvisionSpec provisionSpec )
-        throws ScannerException
-    {
-        NullArgumentException.validateNotNull( provisionSpec, "Provision spec" );
+    public List<ScannedBundle> scan(final ProvisionSpec provisionSpec)
+        throws ScannerException {
+        NullArgumentException.validateNotNull(provisionSpec, "Provision spec");
 
-        LOGGER.debug( "Scanning [" + provisionSpec.getPath() + "]" );
+        LOGGER.debug("Scanning [" + provisionSpec.getPath() + "]");
 
         final ScannerConfiguration config = createConfiguration();
 
-        final Integer defaultStartLevel = getDefaultStartLevel( provisionSpec, config );
-        final Boolean defaultStart = getDefaultStart( provisionSpec, config );
-        final Boolean defaultUpdate = getDefaultUpdate( provisionSpec, config );
+        final Integer defaultStartLevel = getDefaultStartLevel(provisionSpec, config);
+        final Boolean defaultStart = getDefaultStart(provisionSpec, config);
+        final Boolean defaultUpdate = getDefaultUpdate(provisionSpec, config);
 
-        final FeaturesServiceWrapper featuresService = new FeaturesServiceWrapper();
-        try
-        {
-            featuresService.addRepository( provisionSpec.getPathAsUrl().toURI() );
-        }
-        catch( Exception e )
-        {
-            throw new ScannerException( "Repository URL cannot be used", e );
+        try {
+            m_featuresService.addRepository(provisionSpec.getPathAsUrl().toURI());
+        } catch (Exception e) {
+            throw new ScannerException("Repository URL cannot be used", e);
         }
         final List<ScannedBundle> scannedBundles = new ArrayList<ScannedBundle>();
-        for( FeaturesFilter featuresFilter : FeaturesFilter.fromProvisionSpec( provisionSpec ) )
-        {
+        for (FeaturesFilter featuresFilter : FeaturesFilter.fromProvisionSpec(provisionSpec)) {
             scannedBundles.addAll(
                 features(
-                    featuresService,
+                    m_featuresService,
                     featuresFilter.getName(), featuresFilter.getVersion(),
                     defaultStartLevel, defaultStart, defaultUpdate
                 )
-            );
+                );
         }
         return scannedBundles;
     }
@@ -107,56 +106,47 @@ public class FeaturesScanner
      * Determine the scanned bundle sbased on feature name and version
      *
      * @param featuresService feature service (wrapper)
-     * @param featureName     feature name
-     * @param featureVersion  feature version
-     * @param startLevel      start level to be used
-     * @param shouldStart     if the scanned bundle shold be started
-     * @param shouldUpdate    if the scanned bundle should be updated
+     * @param featureName feature name
+     * @param featureVersion feature version
+     * @param startLevel start level to be used
+     * @param shouldStart if the scanned bundle shold be started
+     * @param shouldUpdate if the scanned bundle should be updated
      */
-    private List<ScannedBundle> features( final FeaturesServiceWrapper featuresService,
+    private List<ScannedBundle> features(final FeaturesService featuresService,
                                           final String featureName,
                                           final String featureVersion,
                                           final Integer startLevel,
                                           final Boolean shouldStart,
-                                          final Boolean shouldUpdate )
-        throws ScannerException
-    {
+                                          final Boolean shouldUpdate)
+        throws ScannerException {
         final List<ScannedBundle> scannedBundles = new ArrayList<ScannedBundle>();
         final Feature feature;
-        try
-        {
-            feature = featuresService.getFeature( featureName, featureVersion );
-            if( feature == null )
-            {
+        try {
+            feature = featuresService.getFeature(featureName, featureVersion);
+            if (feature == null) {
                 throw new ScannerException(
-                    "No feature named '" + featureName + "' with version '" + featureVersion + "' available"
-                );
+                    "No feature named '" + featureName + "' with version '" + featureVersion + "' available");
             }
-            for( Feature dependency : feature.getDependencies() )
-            {
+            for (Feature dependency : feature.getDependencies()) {
                 scannedBundles.addAll(
                     features(
                         featuresService,
                         dependency.getName(), dependency.getVersion(),
                         startLevel, shouldStart, shouldUpdate
                     )
-                );
+                    );
             }
-            for( String bundleUrl : feature.getBundles() )
-            {
+            for (BundleInfo bundleInfo : feature.getBundles()) {
                 final ScannedBundleBean scannedBundle = new ScannedBundleBean(
-                    bundleUrl, startLevel, shouldStart, shouldUpdate
-                );
-                scannedBundles.add( scannedBundle );
-                LOGGER.debug( "Installing bundle [" + scannedBundles + "]" );
+                    bundleInfo.getLocation(), startLevel, shouldStart, shouldUpdate
+                    );
+                scannedBundles.add(scannedBundle);
+                LOGGER.debug("Installing bundle [" + scannedBundles + "]");
             }
             return scannedBundles;
-        }
-        catch( Exception e )
-        {
+        } catch (Exception e) {
             throw new ScannerException(
-                "Cannot load the feature named '" + featureName + "' with version '" + featureVersion + "'", e
-            );
+                "Cannot load the feature named '" + featureName + "' with version '" + featureVersion + "'", e);
         }
     }
 
@@ -164,16 +154,14 @@ public class FeaturesScanner
      * Returns the default start level by first looking at the parser and if not set fallback to configuration.
      *
      * @param provisionSpec a parser
-     * @param config        a configuration
+     * @param config a configuration
      *
      * @return default start level or null if nos set.
      */
 
-    private Integer getDefaultStartLevel( ProvisionSpec provisionSpec, ScannerConfiguration config )
-    {
+    private Integer getDefaultStartLevel(ProvisionSpec provisionSpec, ScannerConfiguration config) {
         Integer startLevel = provisionSpec.getStartLevel();
-        if( startLevel == null )
-        {
+        if (startLevel == null) {
             startLevel = config.getStartLevel();
         }
         return startLevel;
@@ -183,15 +171,13 @@ public class FeaturesScanner
      * Returns the default start by first looking at the parser and if not set fallback to configuration.
      *
      * @param provisionSpec a parser
-     * @param config        a configuration
+     * @param config a configuration
      *
      * @return default start level or null if nos set.
      */
-    private Boolean getDefaultStart( final ProvisionSpec provisionSpec, final ScannerConfiguration config )
-    {
+    private Boolean getDefaultStart(final ProvisionSpec provisionSpec, final ScannerConfiguration config) {
         Boolean start = provisionSpec.shouldStart();
-        if( start == null )
-        {
+        if (start == null) {
             start = config.shouldStart();
         }
         return start;
@@ -201,15 +187,13 @@ public class FeaturesScanner
      * Returns the default update by first looking at the parser and if not set fallback to configuration.
      *
      * @param provisionSpec a parser
-     * @param config        a configuration
+     * @param config a configuration
      *
      * @return default update or null if nos set.
      */
-    private Boolean getDefaultUpdate( final ProvisionSpec provisionSpec, final ScannerConfiguration config )
-    {
+    private Boolean getDefaultUpdate(final ProvisionSpec provisionSpec, final ScannerConfiguration config) {
         Boolean update = provisionSpec.shouldUpdate();
-        if( update == null )
-        {
+        if (update == null) {
             update = config.shouldUpdate();
         }
         return update;
@@ -220,9 +204,8 @@ public class FeaturesScanner
      *
      * @param propertyResolver a propertyResolver
      */
-    public void setResolver( final PropertyResolver propertyResolver )
-    {
-        NullArgumentException.validateNotNull( propertyResolver, "PropertyResolver" );
+    public void setResolver(final PropertyResolver propertyResolver) {
+        NullArgumentException.validateNotNull(propertyResolver, "PropertyResolver");
         m_propertyResolver = propertyResolver;
     }
 
@@ -231,9 +214,8 @@ public class FeaturesScanner
      *
      * @return a configuration
      */
-    ScannerConfiguration createConfiguration()
-    {
-        return new ScannerConfigurationImpl( m_propertyResolver, ServiceConstants.PID );
+    ScannerConfiguration createConfiguration() {
+        return new ScannerConfigurationImpl(m_propertyResolver, ServiceConstants.PID);
     }
 
 }
