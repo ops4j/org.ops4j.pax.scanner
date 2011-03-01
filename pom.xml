@@ -47,6 +47,15 @@
       </roles>
       <timezone>UTC+2</timezone>
     </developer>
+    <developer>
+      <id>pieber</id>
+      <name>Andreas Pieber</name>
+      <email>anpieber@gmail.com</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <timezone>GMT+1</timezone>
+    </developer>
   </developers>
 
   <build>
