@@ -1,3 +1,7 @@
+h1. Prerequisites
+
+The release works either with the latest maven2 release (2.2.1) or the latest maven3 release (3.0.3). Lower version numbers can (and will) cause troubles!
+
 h1. Release paxscanner
 
 If you have all required rights to release pax-scanner follow these steps:
