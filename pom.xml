@@ -25,17 +25,20 @@
     <url>http://issues.ops4j.org/jira/browse/PAXSCANNER</url>
   </issueManagement>
 
-  <scm>
-    <connection>scm:svn:https://scm.ops4j.org/repos/ops4j/projects/pax/scanner</connection>
-    <developerConnection>scm:svn:https://scm.ops4j.org/repos/ops4j/projects/pax/scanner</developerConnection>
-  </scm>
-
   <properties>
+    <release-paxscanner-altGitURL>scm:git:ssh://git@github.com/ops4j/org.ops4j.pax.scanner.git</release-paxscanner-altGitURL>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <dependency.base.version>1.2.2</dependency.base.version>
     <dependency.swissbox.version>1.3.1</dependency.swissbox.version>
     <dependency.url.version>1.2.5</dependency.url.version>
     <dependency.karaf.version>2.2.0</dependency.karaf.version>
   </properties>
+
+  <scm>
+    <connection>scm:git:git://github.com/ops4j/org.ops4j.pax.scanner.git</connection>
+    <developerConnection>${release-paxscanner-altGitURL}</developerConnection>
+    <url>http://github.com/ops4j/org.ops4j.pax.scanner/tree/master</url>
+  </scm>
 
   <developers>
     <developer>
