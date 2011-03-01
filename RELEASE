@@ -28,7 +28,6 @@ mvn -Prelease,repos.sonatype.staging -Darguments="-Prelease,repos.sonatype.stagi
 
 {code}
 mvn -Prelease,repos.sonatype.staging -Darguments="-Prelease,repos.sonatype.staging" release:perform
-.... auth failure in site:deploy ...
 {code}
 
 4) push to github:
