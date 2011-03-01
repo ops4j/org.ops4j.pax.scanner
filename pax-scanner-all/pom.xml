@@ -5,13 +5,13 @@
   <parent>
     <groupId>org.ops4j.pax</groupId>
     <artifactId>scanner</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <groupId>org.ops4j.pax.scanner</groupId>
   <artifactId>pax-scanner-all</artifactId>
-  <version>1.1.0</version>
+  <version>1.2.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
 
   <name>OPS4J Pax Scanner - All</name>
@@ -35,21 +35,21 @@
     <dependency>
       <groupId>org.ops4j.pax.scanner</groupId>
       <artifactId>pax-scanner-service</artifactId>
-      <version>1.1.0</version>
+      <version>1.2.0-SNAPSHOT</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>    
      <dependency>
       <groupId>org.ops4j.pax.scanner</groupId>
       <artifactId>pax-scanner-common</artifactId>
-      <version>1.1.0</version>
+      <version>1.2.0-SNAPSHOT</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>    
     <dependency>
       <groupId>org.ops4j.pax.scanner</groupId>
       <artifactId>pax-scanner-all-scanners</artifactId>
-      <version>1.1.0</version>
+      <version>1.2.0-SNAPSHOT</version>
       <type>pom</type>
       <scope>compile</scope>
       <optional>true</optional>
