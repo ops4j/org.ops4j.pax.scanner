@@ -62,7 +62,7 @@ public class BundleScannerTest
     }
 
     @Test
-    public void scanWithFileteredURL()
+    public void scanWithFilteredURL()
         throws ScannerException, MalformedSpecificationException
     {
         ScannerConfiguration config = createMock( ScannerConfiguration.class );
