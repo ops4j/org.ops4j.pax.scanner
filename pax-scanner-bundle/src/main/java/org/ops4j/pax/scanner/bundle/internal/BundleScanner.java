@@ -28,6 +28,7 @@ import org.ops4j.pax.scanner.ProvisionSpec;
 import org.ops4j.pax.scanner.ScannedBundle;
 import org.ops4j.pax.scanner.Scanner;
 import org.ops4j.pax.scanner.ScannerException;
+import org.ops4j.pax.scanner.ServiceConstants;
 import org.ops4j.pax.scanner.common.ScannedFileBundle;
 import org.ops4j.pax.scanner.common.ScannerConfiguration;
 import org.ops4j.pax.scanner.common.ScannerConfigurationImpl;
@@ -77,8 +78,12 @@ public class BundleScanner
         final ScannerConfiguration config = createConfiguration();
         try
         {
+            String reference = provisionSpec.getPath();
+            if( provisionSpec.getFilter() != null ) {
+                reference = reference + ServiceConstants.SEPARATOR_FILTER + provisionSpec.getFilter();
+            }
             final ScannedFileBundle scannedFileBundle = new ScannedFileBundle(
-                provisionSpec.getPath(),
+                reference,
                 getDefaultStartLevel( provisionSpec, config ),
                 getDefaultStart( provisionSpec, config ),
                 getDefaultUpdate( provisionSpec, config )

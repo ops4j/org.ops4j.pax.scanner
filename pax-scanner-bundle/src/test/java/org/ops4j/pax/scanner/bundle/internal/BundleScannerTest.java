@@ -54,7 +54,32 @@ public class BundleScannerTest
             new ProvisionSpec( "scan-bundle:file:bundle.jar" )
         );
         assertNotNull( "Returned list is null", scannedBundles );
-        assertEquals( "Nuber of bundles", 1, scannedBundles.size() );
+        assertEquals( "Number of bundles", 1, scannedBundles.size() );
+        ScannedBundle scannedBundle = scannedBundles.get(0);
+        assertNotNull( scannedBundle );
+        assertEquals( "file:bundle.jar", scannedBundle.getLocation() );
+        verify( config );
+    }
+
+    @Test
+    public void scanWithFileteredURL()
+        throws ScannerException, MalformedSpecificationException
+    {
+        ScannerConfiguration config = createMock( ScannerConfiguration.class );
+
+        expect( config.getStartLevel() ).andReturn( null );
+        expect( config.shouldStart() ).andReturn( null );
+        expect( config.shouldUpdate() ).andReturn( null );
+
+        replay( config );
+        List<ScannedBundle> scannedBundles = createBundleScanner( config ).scan(
+            new ProvisionSpec( "scan-bundle:assembly:/my/directory/!/filter" )
+        );
+        assertNotNull( "Returned list is null", scannedBundles );
+        assertEquals( "Number of bundles", 1, scannedBundles.size() );
+        ScannedBundle scannedBundle = scannedBundles.get(0);
+        assertNotNull( scannedBundle );
+        assertEquals( "assembly:/my/directory/!/filter", scannedBundle.getLocation() );
         verify( config );
     }
 
