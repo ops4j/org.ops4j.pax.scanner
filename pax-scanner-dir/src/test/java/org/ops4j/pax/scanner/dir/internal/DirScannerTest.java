@@ -95,9 +95,9 @@ public class DirScannerTest
         expect( config.shouldStart() ).andReturn( null );
         expect( config.shouldUpdate() ).andReturn( null );
 
-        replay( config );
+        replay( config );;
         List<ScannedBundle> scannedBundles = createScanner( config ).scan(
-            new ProvisionSpec( "scan-dir:file:" + file.getAbsolutePath() + "!/*.jar" )
+            new ProvisionSpec( "scan-dir:" + file.toURI().toASCIIString() + "!/*.jar" )
         );
         assertNotNull( "Returned list is null", scannedBundles );
         assertEquals( "Number of bundles", 1, scannedBundles.size() );

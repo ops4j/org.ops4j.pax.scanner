@@ -157,6 +157,7 @@ public class FileScannerTest
 
         recorder.record( "prop.1=value.1" );
         recorder.record( "prop.2=value.2" );
+        recorder.record( "prop.3=value \"3\"" );
 
         replay( config, recorder );
         Properties sysPropsBackup = System.getProperties();
