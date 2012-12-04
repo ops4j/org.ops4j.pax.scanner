@@ -63,10 +63,13 @@ public class FileScanner
      */
     private static final String PROPERTY_PREFIX = "-D";
     /**
-     * Regex pattern used to spint property key/value.
+     * Regex pattern used to print property key/value.
      */
     private static final Pattern PROPERTY_PATTERN = Pattern.compile( "-D(.*)=(.*)" );
-
+    /**
+     * Regex pattern used to quote property value.
+     */
+    private static final Pattern QUOTED_PROPERTY_VALUE_PATTERN = Pattern.compile("\"[^\"\\\\]*(?:\\\\.[^\"\\\\]*)*\"");
     /**
      * PropertyResolver used to resolve properties.
      */
@@ -114,18 +117,31 @@ public class FileScanner
                 String line;
                 while( ( line = bufferedReader.readLine() ) != null )
                 {
-                    if( !"".equals( line.trim() ) && !line.trim().startsWith( COMMENT_SIGN ) )
+                    String trimmedLine = line.trim();
+                    if( trimmedLine.length() > 0 && !trimmedLine.startsWith( COMMENT_SIGN ) )
                     {
-                        if( line.trim().startsWith( PROPERTY_PREFIX ) )
+                        if( trimmedLine.startsWith( PROPERTY_PREFIX ) )
                         {
-                            final Matcher matcher = PROPERTY_PATTERN.matcher( line.trim() );
+                            Matcher matcher = PROPERTY_PATTERN.matcher( trimmedLine );
                             if( !matcher.matches() || matcher.groupCount() != 2 )
                             {
                                 throw new ScannerException( "Invalid property: " + line );
                             }
+                            String key = matcher.group( 1 );
                             String value = matcher.group( 2 );
-                            value = SystemPropertyUtils.resolvePlaceholders( value );
-                            System.setProperty( matcher.group( 1 ), value );
+                            StringBuffer stringBuffer = new StringBuffer( value.length() );
+                            for ( matcher = QUOTED_PROPERTY_VALUE_PATTERN.matcher( value ); 
+                            		matcher.find(); matcher.appendReplacement( stringBuffer, value ) ) {
+                            	String group = matcher.group();
+                            	value = group.substring( 1, group.length() - 1 ).replace( "\\\"", "\"" ).replace( "$", "\\$" );   
+                            }
+                            int index = stringBuffer.length();
+                            matcher.appendTail(stringBuffer);
+                            if ( index < stringBuffer.length()  && !( stringBuffer.indexOf( " ", index ) < 0 && stringBuffer.indexOf( "\"", index ) < 0 ) ) {
+                            	throw new ScannerException( "Invalid property: " + line );
+                            }
+                            value = SystemPropertyUtils.resolvePlaceholders( stringBuffer.toString() );
+                            System.setProperty( key, value );
                         }
                         else
                         {

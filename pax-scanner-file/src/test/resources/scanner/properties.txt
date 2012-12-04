@@ -3,3 +3,6 @@
 
 #second property
 -Dprop.2=value.2
+
+#third property
+-Dprop.3="value"" \"3\""
