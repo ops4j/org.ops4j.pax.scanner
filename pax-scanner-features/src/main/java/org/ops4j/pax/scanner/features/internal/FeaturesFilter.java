@@ -21,7 +21,7 @@ package org.ops4j.pax.scanner.features.internal;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.apache.karaf.features.internal.FeatureImpl;
+import org.apache.karaf.features.internal.model.Feature;
 import org.ops4j.lang.NullArgumentException;
 import org.ops4j.pax.scanner.ProvisionSpec;
 import org.ops4j.pax.scanner.ScannerException;
@@ -67,7 +67,7 @@ class FeaturesFilter {
 
         m_name = name;
         if (version == null || version.trim().length() == 0) {
-            m_version = FeatureImpl.DEFAULT_VERSION;
+            m_version = Feature.DEFAULT_VERSION;
         } else {
             m_version = version;
         }
