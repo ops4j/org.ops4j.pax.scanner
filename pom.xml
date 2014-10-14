@@ -28,7 +28,7 @@
   <properties>
     <release-paxscanner-altGitURL>scm:git:ssh://git@github.com/ops4j/org.ops4j.pax.scanner.git</release-paxscanner-altGitURL>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <dependency.base.version>1.2.2</dependency.base.version>
+    <dependency.base.version>1.5.0</dependency.base.version>
     <dependency.swissbox.version>1.3.1</dependency.swissbox.version>
     <dependency.url.version>1.2.5</dependency.url.version>
     <dependency.karaf.version>3.0.2</dependency.karaf.version>
@@ -111,6 +111,11 @@
       <dependency>
         <groupId>org.ops4j.base</groupId>
         <artifactId>ops4j-base-net</artifactId>
+        <version>${dependency.base.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.ops4j.base</groupId>
+        <artifactId>ops4j-base-monitors</artifactId>
         <version>${dependency.base.version}</version>
       </dependency>
       <dependency>
